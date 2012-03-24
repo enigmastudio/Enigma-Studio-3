@@ -2,7 +2,7 @@
 <enigma version="3.11b">
   <pages>
     <page id="1489405890" name="New page">
-      <operator width="4" bypassed="0" username="" hidden="0" type="Model : Particles" id="2077902995" ypos="18" xpos="52">
+      <operator width="4" bypassed="0" username="" hidden="0" type="Model : Particles" id="2077902995" ypos="19" xpos="52">
         <parameter animated="1" pathid="188709324" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
         <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Emitter" name="Emitter" animoffset="0"/>
         <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Emitter Mode" animoffset="0"/>
@@ -54,7 +54,7 @@
         <parameter animated="0" pathid="0" value0="32" value1="32" animscale="1" animchan="1" name="Segments" animoffset="0"/>
         <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
       </operator>
-      <operator width="4" bypassed="0" username="emitter" hidden="0" type="Misc : Store" id="361580454" ypos="6" xpos="24"/>
+      <operator width="4" bypassed="0" username="emitter" hidden="0" type="Misc : Store" id="361580454" ypos="6" xpos="20"/>
       <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Transform" id="1054247345" ypos="4" xpos="24">
         <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Translate" animoffset="0"/>
         <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Rotate" animoffset="0"/>
@@ -174,7 +174,7 @@
         <parameter animated="0" pathid="0" value0="4.24" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
       </operator>
       <operator width="4" bypassed="0" username="Down" hidden="0" type="Path : Path" id="802522189" ypos="5" xpos="62"/>
-      <operator width="4" bypassed="0" username="gravity" hidden="0" type="Misc : Store" id="1002054893" ypos="6" xpos="62"/>
+      <operator width="4" bypassed="0" username="gravity" hidden="0" type="Misc : Store" id="1002054893" ypos="6" xpos="66"/>
       <operator width="4" bypassed="0" username="" hidden="0" type="Path : TShader WP" id="1991819123" ypos="4" xpos="70">
         <parameter animated="1" pathid="188709324" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
         <parameter animated="0" pathid="0" animscale="1" animchan="1" value="mov v1.x, time&#xa;sin v0.x, v1.x&#xa;mul v0.x, 10" name="Code" animoffset="0"/>
@@ -268,6 +268,18 @@
       <comment ypos="-153" xpos="280" text="Particles can be stretched"/>
       <comment ypos="136" xpos="1560" text="Particles can be stretched"/>
       <comment ypos="343" xpos="343" text="Particle Rotation is animated over particle lifetime"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : BC Logo" id="739745536" ypos="3" xpos="20">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Torus" hidden="0" type="Misc : Nop" id="910605498" ypos="5" xpos="20"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Transform" id="1578136364" ypos="4" xpos="20">
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Translate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Rotate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" value1="10" value2="10" animscale="1" animchan="1" name="Scale" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" animscale="1" animchan="1" name="Reverse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Selection" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
     </page>
   </pages>
   <pagetree>

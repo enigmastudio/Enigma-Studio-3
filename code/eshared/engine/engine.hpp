@@ -25,7 +25,6 @@
 #include "geometry.hpp"
 #include "editmesh.hpp"
 #include "path.hpp"
-#include "stablefluids.hpp"
 #include "camera.hpp"
 #include "renderjob.hpp"
 #include "light.hpp"
