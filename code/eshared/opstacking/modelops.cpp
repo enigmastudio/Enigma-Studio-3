@@ -299,11 +299,11 @@ OP_END(eModelDuplicateCircularOp);
 OP_DEFINE_MODEL(eParticleSystemOp, eParticleSystemOp_ID, "Particles", 'a', 0, 0, "")
     OP_INIT()
     {
+        eOP_PARAM_ADD_FLOAT("Time", -eF32_MAX, eF32_MAX, 0.0f);
         eOP_PARAM_ADD_LABEL("Emitter", "Emitter");
-        eOP_PARAM_ADD_ENUM("Emitter Mode", "Faces|Edges|Vertices|FluidForce", 0);
+        eOP_PARAM_ADD_ENUM("Emitter Mode", "Faces|Edges|Vertices", 0);
         eOP_PARAM_ADD_FLOAT("Emission frequency [1/s]", 0.01f, 100000.0f, 100.0f);
         eOP_PARAM_ADD_LINK("Emitter mesh", "Mesh");
-        eOP_PARAM_ADD_LINK("Force (FluidOp)", "Mesh");
 
         eOP_PARAM_ADD_LABEL("Life of particle", "Life of particle");
         eOP_PARAM_ADD_FLOAT("Randomization", 0.0f, 1.0f, 1.0f);
@@ -332,7 +332,7 @@ OP_DEFINE_MODEL(eParticleSystemOp, eParticleSystemOp_ID, "Particles", 'a', 0, 0,
         eSAFE_DELETE(m_tex);
     }
 
-    OP_EXEC(eGraphicsApiDx9 *gfx, eInt emitterMode, eF32 emissionFreq, const eIMeshOp *emitterOp, const eIMeshOp *forceOp,
+    OP_EXEC(eGraphicsApiDx9 *gfx, eF32 time, eInt emitterMode, eF32 emissionFreq, const eIMeshOp *emitterOp,
             eF32 randomization, eF32 lifeTime, eF32 emissionVel, const eIPathOp *sizeOp, const eIPathOp *colorOp,
             const eIPathOp *rotOp, eF32 stretch, eF32 gravity, const eIBitmapOp *bmpOp, eInt blendSrc, eInt blendDst, eInt blendOp)
     {
@@ -353,7 +353,7 @@ OP_DEFINE_MODEL(eParticleSystemOp, eParticleSystemOp_ID, "Particles", 'a', 0, 0,
 
 	    for (eU32 i=0; i<3; i++)
         {
-		    if (getParameter(10+i).getChanged())
+//		    if (getParameter(8+i).getChanged())
             {
 			    if (pathOps[i])
                 {
@@ -372,24 +372,10 @@ OP_DEFINE_MODEL(eParticleSystemOp, eParticleSystemOp_ID, "Particles", 'a', 0, 0,
 		    }
 	    }
 
-        if (getParameter(4).getChanged() || getParameter(2).getChanged())
-        {
-#if defined(PSYS_USE_EMITTERMODES)
-            m_psys->setEmitter(!emitterOp ? eNULL : &emitterOp->getResult().mesh, (eParticleSystem::EmitterMode)emitterMode);
-#else
-            m_psys.setEmitter(!emitterOp ? eNULL : &emitterOp->getResult().mesh);
-#endif
-        }
+//        if (getParameter(5).getChanged() || getParameter(3).getChanged())
+	        m_psys.setEmitter(!emitterOp ? eNULL : &emitterOp->getResult().mesh, (eParticleSystem::EmitterMode)emitterMode);
 
-#if defined(PSYS_USE_LIQUID_INFLUENCE) && (defined(HAVE_OP_MESH_LIQUID) || defined(eEDITOR)) 
-        if (getParameter(5).getChanged())
-        {
-            const eLiquidOp *liquidOp = (eLiquidOp *)eDemoData::findOperator(param.getValue().linkedOpId);
-            m_psys->m_fluids = !liquidOp ? eNULL : liquidOp->getStableFluids();
-        }
-#endif
-
-        if (getParameter(16).getChanged())
+//        if (getParameter(17).getChanged())
         {
             eSAFE_DELETE(m_tex);
             m_psys.m_tex = eNULL;
@@ -407,7 +393,11 @@ OP_DEFINE_MODEL(eParticleSystemOp, eParticleSystemOp_ID, "Particles", 'a', 0, 0,
             }
         }
 
-        m_sceneData.addRenderable(m_psysInst);
+		m_psys.update(time);
+
+		// only add if there actually is a particle
+		if(m_psys.m_count > 0)
+	        m_sceneData.addRenderable(m_psysInst);
     }
 
     OP_VAR(eITexture2d *m_tex);

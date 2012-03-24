@@ -14,10 +14,8 @@
 #ifndef PARTICLE_SYS_HPP
 #define PARTICLE_SYS_HPP
 
-#define PSYS_MAX_PARTICLES 100000
+#define PSYS_MAX_PARTICLES 20000
 #define PSYS_MAX_TIME_STEP (1.0f/30.0f)
-//#define PSYS_USE_EMITTERMODES
-//#define PSYS_USE_LIQUID_INFLUENCE
 
 class eParticleSystem
 {
@@ -38,14 +36,11 @@ public:
         mutable eMaterial       m_mat;
     };
 
-#if defined(PSYS_USE_EMITTERMODES)
     enum EmitterMode {
         EMITTERMODE_FACES,
         EMITTERMODE_EDGES,
-        EMITTERMODE_VERTICES,
-        EMITTERMODE_FLUID_INFLUENCED,
+        EMITTERMODE_VERTICES
     };
-#endif
 
 	enum PATHSAMPLERS {
 		SIZE = 0,
@@ -76,12 +71,8 @@ public:
 
     void                    update(eF32 time);
 	void					init(eGraphicsApiDx9 * gfx);
-#if defined(PSYS_USE_EMITTERMODES)
 	void                    setEmitter(const eEditMesh *mesh, EmitterMode mode);
     EmitterMode             m_emitterMode;
-#else
-	void                    setEmitter(const eEditMesh *mesh);
-#endif
     eITexture2d *           m_tex;
     eF32                    m_emissionFreq;
     eF32                    m_emissionVel;
@@ -113,19 +104,9 @@ public:
     eBlendMode              m_blendDst;
     eBlendOp                m_blendOp;
 
-#if defined(PSYS_USE_LIQUID_INFLUENCE)
-	const eStableFluids*    m_fluids;
-#endif
-
 private:
     __forceinline __m128 _calcAcceleration(eF32 mass, const __m128 pos) const {
 		__m128 result = _mm_load_ps(&this->m_gravityConst->x);
-#if defined(PSYS_USE_LIQUID_INFLUENCE)
-		if(this->m_fluids != eNULL) {
-			const __m128 fluidForce = this->m_fluids->evaluateAt(pos);
-			result = _mm_add_ps(result, _mm_mul_ps(fluidForce, _mm_set1_ps(mass)));
-		}
-#endif
 		return result;
 	}
 

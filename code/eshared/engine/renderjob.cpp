@@ -142,7 +142,7 @@ void eRenderJob::render(eGraphicsApiDx9 *gfx, const eCamera &cam, eInt renderWha
 
 void eRenderJob::addInstance(const eMatrix4x4 &modelMtx, const eMatrix4x4 &normalMtx)
 {
-    eASSERT(m_useInstancing == eTRUE);
+//    eASSERT(m_useInstancing == eTRUE);
 
     this->m_numInstances++;
 

@@ -71,9 +71,6 @@ eParticleSystem::eParticleSystem() :
     m_lifeTime(10.0f),
     m_stretchAmount(0.0f),
     m_gravity(0.0f),
-#if defined(PSYS_USE_LIQUID_INFLUENCE)
-	m_fluids(eNULL),
-#endif
 	m_blendSrc(eBLEND_SRCALPHA),
     m_blendDst(eBLEND_ONE),
     m_blendOp(eBLENDOP_ADD),
@@ -184,14 +181,11 @@ void eParticleSystem::update(eF32 time)
                         eU32 f = eClamp((eU32)0, r , m_emitterEntities.size()-1);
                         eF32 w0 = eRandomF(seed);
 						eF32 w0Inv = 1.0f - w0;
-#if defined(PSYS_USE_EMITTERMODES)
                         switch (m_emitterMode) {
                             case EMITTERMODE_FACES: {
-#endif
                                 const eEditMesh::Face *tri = m_emitterMesh->getFace(f);
                                 eASSERT(tri != eNULL);
 								tri->getRandomSurfacePoint(p.dynamicEntity.position, p.dynamicEntity.velocity);
-#if defined(PSYS_USE_EMITTERMODES)
                                 break;
                             }
                             case EMITTERMODE_EDGES: {
@@ -214,7 +208,6 @@ void eParticleSystem::update(eF32 time)
                                 break;
                             }
                         }
-#endif
 						p.dynamicEntity.velocity.normalize();
 						p.dynamicEntity.velocity *= initVel;
                     }
@@ -232,20 +225,14 @@ void eParticleSystem::update(eF32 time)
 }
 
 
-#if defined(PSYS_USE_EMITTERMODES)
 void eParticleSystem::setEmitter(const eEditMesh *mesh, EmitterMode mode) {
     m_emitterMode = mode;
-#else
-void eParticleSystem::setEmitter(const eEditMesh *mesh) {
-#endif
     if (mesh) {
 		m_emitterMesh = mesh;
         eASSERT(m_emitterMesh != eNULL);
         m_emitterEmitSurfaceArea = 0.0f;
-#if defined(PSYS_USE_EMITTERMODES)
         switch (mode) {
             case EMITTERMODE_FACES: {
-#endif
                 m_emitterEntities.resize(m_emitterMesh->getFaceCount());
                 for (eU32 i=0; i<m_emitterMesh->getFaceCount(); i++) {
                     // Calc face area.
@@ -253,8 +240,6 @@ void eParticleSystem::setEmitter(const eEditMesh *mesh) {
                     // Add to sum.
                     m_emitterEntities[i] = m_emitterEmitSurfaceArea;
                 }
-#if defined(PSYS_USE_EMITTERMODES)
-
                 break;
             }
 
@@ -287,7 +272,6 @@ void eParticleSystem::setEmitter(const eEditMesh *mesh) {
                 break;
             }
         }
-#endif
     }
 }
 
@@ -360,15 +344,21 @@ void eParticleSystem::_fillDynamicBuffers(ePtr param, eGeometry *geo) {
             eVector3 r = right * scale;
             eVector3 u = up * scale;
             eVector3 pos2 = p.dynamicEntity.position;
-            if(psys->m_stretchAmount != 0.0f) {
-                const eVector3 velNorm = p.dynamicEntity.velocity.normalized();
-                const eF32 rightCos = right*velNorm;
-                const eQuat qr(view, rot*rightCos);
+            if(psys->m_stretchAmount != 0.0f) 
+			{
+                eVector3 flyDir = p.dynamicEntity.velocity;
+				const eVector3 velNorm = p.dynamicEntity.velocity.normalized();
+                const eF32 rightCos = view*velNorm;
+                const eQuat qr(view, rot);
                 const eQuat qr90(view, -eHALFPI);
-                r = ((velNorm * qr90)*qr) * scale;
+                r = -((velNorm * qr90)*qr) * scale;
                 u = (velNorm * qr) * scale;
                 pos2 = p.dynamicEntity.position+p.dynamicEntity.velocity*psys->m_stretchAmount;
-            }
+            } else 
+				if(rot != 0) {
+					r = (r * eQuat(view, rot));
+					u = (u * eQuat(view, rot));
+				}
 
 			const eVector3 mid = (p.dynamicEntity.position + pos2) * 0.5f;
 

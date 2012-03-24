@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<enigma version="3.11b">
+  <pages>
+    <page id="1489405890" name="New page">
+      <operator width="4" bypassed="0" username="" hidden="0" type="Model : Particles" id="2077902995" ypos="18" xpos="52">
+        <parameter animated="1" pathid="188709324" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Emitter" name="Emitter" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Emitter Mode" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10000" animscale="1" animchan="1" name="Emission frequency [1/s]" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="361580454" animscale="1" animchan="1" name="Emitter mesh" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Life of particle" name="Life of particle" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.71" animscale="1" animchan="1" name="Randomization" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1.43" animscale="1" animchan="1" name="Life time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="8.5" animscale="1" animchan="1" name="Emission velocity" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="327699542" animscale="1" animchan="1" name="Size" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="701265895" animscale="1" animchan="1" name="Color" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1466487978" animscale="1" animchan="1" name="Rotation" animoffset="0"/>
+        <parameter animated="1" pathid="557817184" value0="0" animscale="1" animchan="1" name="Particle stretch" animoffset="0"/>
+        <parameter animated="1" pathid="1002054893" value0="0" animscale="1" animchan="1" name="Gravity" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Blending" name="Blending" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="948049584" animscale="1" animchan="1" name="Texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="4" animscale="1" animchan="1" name="Blending source" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="5" animscale="1" animchan="1" name="Blending dest." animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Blending op." animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="93598511" ypos="12" xpos="1">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="157280234" ypos="12" xpos="5">
+        <parameter animated="0" pathid="0" value0="1000" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1000" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="8" bypassed="0" username="realtime" hidden="0" type="Path : Path" id="188709324" ypos="13" xpos="1"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Bitmap : Fill" id="818618877" ypos="3" xpos="6">
+        <parameter animated="0" pathid="0" value0="8" animscale="1" animchan="1" name="Width" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="8" animscale="1" animchan="1" name="Height" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" value3="0" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Bitmap : Glow" id="904149700" ypos="4" xpos="6">
+        <parameter animated="0" pathid="0" value0="0.5" value1="0.5" animscale="1" animchan="1" name="Center" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.25" value1="0.25" animscale="1" animchan="1" name="Radius" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="255" animscale="1" animchan="1" name="Alpha" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="128" animscale="1" animchan="1" name="Gamma" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="texture" hidden="0" type="Misc : Store" id="948049584" ypos="6" xpos="6"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Torus" id="279175733" ypos="3" xpos="24">
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Radius" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.09" animscale="1" animchan="1" name="Thickness" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Phase" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="32" value1="32" animscale="1" animchan="1" name="Segments" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="emitter" hidden="0" type="Misc : Store" id="361580454" ypos="6" xpos="24"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Transform" id="1054247345" ypos="4" xpos="24">
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Translate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Rotate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" value1="10" value2="10" animscale="1" animchan="1" name="Scale" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" animscale="1" animchan="1" name="Reverse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Selection" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Sphere" id="1250286820" ypos="2" xpos="28">
+        <parameter animated="0" pathid="0" value0="32" value1="32" animscale="1" animchan="1" name="Segments" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.5" animscale="1" animchan="1" name="Radius" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Select cube" id="1309397039" ypos="3" xpos="28">
+        <parameter animated="0" pathid="0" value0="2" animscale="1" animchan="1" name="Primitive" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Mode" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Cube" name="Cube" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="-0.48" value2="0" animscale="1" animchan="1" name="Translate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Rotate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" value1="1" value2="1" animscale="1" animchan="1" name="Scale" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Delete" id="2033039231" ypos="4" xpos="28">
+        <parameter animated="0" pathid="0" value0="2" animscale="1" animchan="1" name="Primitive" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Halfdome" hidden="0" type="Misc : Nop" id="350182263" ypos="5" xpos="28"/>
+      <operator width="4" bypassed="0" username="Torus" hidden="0" type="Misc : Nop" id="1187893564" ypos="5" xpos="24"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Path : Color WP" id="760552692" ypos="4" xpos="44">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="0" value2="0" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Path : Color WP" id="846453269" ypos="4" xpos="47">
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="1065353216" value2="0" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="6" bypassed="0" username="Red-Green" hidden="0" type="Path : Path" id="882571512" ypos="5" xpos="44"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="1897358529" ypos="15" xpos="1">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="1961762953" ypos="15" xpos="5">
+        <parameter animated="0" pathid="0" value0="0.37" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.85" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="17795269" ypos="15" xpos="9">
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="12" bypassed="0" username="size" hidden="0" type="Path : Path" id="327699542" ypos="16" xpos="1"/>
+      <operator width="4" bypassed="0" username="Color" hidden="0" type="Misc : Store" id="701265895" ypos="6" xpos="51"/>
+      <operator width="9" bypassed="0" username="flame" hidden="0" type="Path : Path" id="1038162210" ypos="5" xpos="50"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Path : Color WP" id="87631595" ypos="4" xpos="53">
+        <parameter animated="0" pathid="0" value0="0.58" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="0" value2="0" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Path : Color WP" id="1797918970" ypos="4" xpos="50">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1063116254" value2="1036042433" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Path : Color WP" id="1093574889" ypos="4" xpos="56">
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1056635643" value1="1058115986" value2="1065353216" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Select cube" id="1408977678" ypos="2" xpos="32">
+        <parameter animated="0" pathid="0" value0="2" animscale="1" animchan="1" name="Primitive" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Mode" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Cube" name="Cube" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="-0.01" value2="0" animscale="1" animchan="1" name="Translate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Rotate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" value1="1" value2="1" animscale="1" animchan="1" name="Scale" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Sphere" id="385658677" ypos="1" xpos="32">
+        <parameter animated="0" pathid="0" value0="32" value1="32" animscale="1" animchan="1" name="Segments" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.5" animscale="1" animchan="1" name="Radius" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="cone" hidden="0" type="Misc : Nop" id="659737693" ypos="5" xpos="32"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Delete" id="753336790" ypos="3" xpos="32">
+        <parameter animated="0" pathid="0" value0="2" animscale="1" animchan="1" name="Primitive" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Transform" id="2002113515" ypos="4" xpos="32">
+        <parameter animated="0" pathid="0" value0="0" value1="-0.47" value2="0" animscale="1" animchan="1" name="Translate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Rotate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" value1="1" value2="1" animscale="1" animchan="1" name="Scale" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" animscale="1" animchan="1" name="Reverse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Selection" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="stream" hidden="0" type="Misc : Nop" id="1353947875" ypos="5" xpos="36"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Transform" id="1065211513" ypos="4" xpos="36">
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Translate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" animchan="1" name="Rotate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" value1="10" value2="10" animscale="1" animchan="1" name="Scale" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" animscale="1" animchan="1" name="Reverse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Selection" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Mesh : Plane" id="1235543409" ypos="3" xpos="36">
+        <parameter animated="0" pathid="0" value0="1" value1="1" animscale="1" animchan="1" name="Segments" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.05" value1="0.05" animscale="1" animchan="1" name="Size" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="746857405" ypos="4" xpos="62">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="4.24" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Down" hidden="0" type="Path : Path" id="802522189" ypos="5" xpos="62"/>
+      <operator width="4" bypassed="0" username="gravity" hidden="0" type="Misc : Store" id="1002054893" ypos="6" xpos="62"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : TShader WP" id="1991819123" ypos="4" xpos="70">
+        <parameter animated="1" pathid="188709324" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="mov v1.x, time&#xa;sin v0.x, v1.x&#xa;mul v0.x, 10" name="Code" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Alternating" hidden="0" type="Path : Path" id="523587545" ypos="5" xpos="70"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="215450634" ypos="4" xpos="66">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="-4" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Up" hidden="0" type="Path : Path" id="421376796" ypos="5" xpos="66"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Bitmap : Line" id="1473482526" ypos="2" xpos="10">
+        <parameter animated="0" pathid="0" value0="0.25" value1="0.75" animscale="1" animchan="1" name="Start" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.25" value1="0.25" animscale="1" animchan="1" name="End" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="3" animscale="1" animchan="1" name="Thickness" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Decay" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Bitmap : Line" id="325242257" ypos="3" xpos="10">
+        <parameter animated="0" pathid="0" value0="0.75" value1="0.25" animscale="1" animchan="1" name="Start" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.25" value1="0.25" animscale="1" animchan="1" name="End" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="3" animscale="1" animchan="1" name="Thickness" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Decay" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="1435949659" ypos="18" xpos="1">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="8" bypassed="0" username="RotationPath" hidden="0" type="Path : Path" id="1466487978" ypos="19" xpos="1"/>
+      <operator width="4" bypassed="0" username="alternating" hidden="0" type="Path : Scalar WP" id="1515665260" ypos="17" xpos="17">
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="1" pathid="1180888627" value0="0" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Rotation" hidden="0" type="Misc : Store" id="1741433691" ypos="18" xpos="21"/>
+      <operator width="4" bypassed="0" username="on" hidden="0" type="Path : Path" id="640213527" ypos="5" xpos="80"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="1175676819" ypos="4" xpos="76">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : Scalar WP" id="640247141" ypos="4" xpos="80">
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Alternating" hidden="0" type="Path : Path" id="1740627317" ypos="5" xpos="84"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Path : TShader WP" id="1701077385" ypos="4" xpos="84">
+        <parameter animated="1" pathid="188709324" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="mov v1.x, time&#xa;sin v0.x, v1.x&#xa;mul v0.x, 1&#xa;add v0.x, 1" name="Code" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="stretch" hidden="0" type="Misc : Store" id="557817184" ypos="6" xpos="76"/>
+      <operator width="4" bypassed="0" username="off" hidden="0" type="Path : Path" id="1467292333" ypos="5" xpos="76"/>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Bitmap : Glow" id="1175849781" ypos="4" xpos="10">
+        <parameter animated="0" pathid="0" value0="0.5" value1="0.5" animscale="1" animchan="1" name="Center" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.25" value1="0.25" animscale="1" animchan="1" name="Radius" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="1" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="255" animscale="1" animchan="1" name="Alpha" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="128" animscale="1" animchan="1" name="Gamma" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="" hidden="0" type="Bitmap : Fill" id="1362749573" ypos="1" xpos="10">
+        <parameter animated="0" pathid="0" value0="8" animscale="1" animchan="1" name="Width" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="8" animscale="1" animchan="1" name="Height" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="1" value3="0" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Simple" hidden="0" type="Misc : Nop" id="73019190" ypos="5" xpos="6"/>
+      <operator width="4" bypassed="0" username="With Direction" hidden="0" type="Misc : Nop" id="129490710" ypos="5" xpos="10"/>
+      <operator width="4" bypassed="0" username="Path:TShader WP_1" hidden="0" type="Path : TShader WP" id="1180888627" ypos="15" xpos="17">
+        <parameter animated="1" pathid="188709324" value0="0" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="mov v1.x, time&#xa;sin v0.x, v1.x&#xa;mul v0.x, 10&#xa;" name="Code" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="Rotation" hidden="0" type="Misc : Load" id="512334109" ypos="18" xpos="5">
+        <parameter animated="0" pathid="0" value0="1741433691" animscale="1" animchan="1" name="Load" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="off" hidden="0" type="Path : Scalar WP" id="1216849935" ypos="17" xpos="21">
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <operator width="4" bypassed="0" username="on" hidden="0" type="Path : Scalar WP" id="1257892629" ypos="17" xpos="25">
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="Time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Interpolation" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" animscale="1" animchan="1" name="Scalar" animoffset="0"/>
+      </operator>
+      <comment ypos="136" xpos="540" text="Try different Emitters by putting the&#xa;&quot;emitter&quot; op below another emitter"/>
+      <comment ypos="-187" xpos="720" text="Try different color shemes"/>
+      <comment ypos="136" xpos="960" text="Try different colors"/>
+      <comment ypos="136" xpos="1300" text="Gravity can be animated"/>
+      <comment ypos="-153" xpos="280" text="Particles can be stretched"/>
+      <comment ypos="136" xpos="1560" text="Particles can be stretched"/>
+      <comment ypos="343" xpos="343" text="Particle Rotation is animated over particle lifetime"/>
+    </page>
+  </pages>
+  <pagetree>
+    <item expanded="0" pageid="1489405890" name="New page"/>
+  </pagetree>
+  <songs/>
+  <songlist/>
+  <instruments/>
+</enigma>
