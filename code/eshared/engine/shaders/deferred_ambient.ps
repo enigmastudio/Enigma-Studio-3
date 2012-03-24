@@ -1,0 +1,22 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "globals.ps"
+
+sampler s_diffuseMap: register(s0);
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR 
+{
+	const float4 col = tex2D(s_diffuseMap, texCoord);
+	return col*float4(c_lightTotalAmbientCol, 1.0f);
+}

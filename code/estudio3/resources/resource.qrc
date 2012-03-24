@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/icons" >
+    <file>estudio.png</file>
+  </qresource>
+  <qresource prefix="/images" >
+    <file>operator.png</file>
+    <file>operator_end.png</file>
+    <file>operator_start.png</file>
+    <file>skip_forward.png</file>
+    <file>pause.png</file>
+    <file>play.png</file>
+    <file>skip_backward.png</file>
+  </qresource>
+</RCC>

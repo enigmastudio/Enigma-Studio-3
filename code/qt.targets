@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema
+      Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName
+      Include="Qt_User_Interface_Compiler">
+      <Targets>_Qt_User_Interface_Compiler</Targets>
+    </AvailableItemName>
+    <AvailableItemName
+      Include="Qt_Resource_Compiler">
+      <Targets>_Qt_Resource_Compiler</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="Qt_User_Interface_Compiler"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <UsingTask
+    TaskName="Qt_Resource_Compiler"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <Target
+    Name="_Qt_User_Interface_Compiler"
+    BeforeTargets="$(Qt_User_Interface_CompilerBeforeTargets)"
+    AfterTargets="$(Qt_User_Interface_CompilerAfterTargets)"
+    Condition="'@(Qt_User_Interface_Compiler)' != ''"
+    DependsOnTargets="$(Qt_User_Interface_CompilerDependsOn);ComputeQt_User_Interface_CompilerOutput"
+    Outputs="%(Qt_User_Interface_Compiler.Outputs)"
+    Inputs="%(Qt_User_Interface_Compiler.Identity);%(Qt_User_Interface_Compiler.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup
+      Condition="'@(SelectedFiles)' != ''">
+      <Qt_User_Interface_Compiler
+        Remove="@(Qt_User_Interface_Compiler)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <Qt_User_Interface_Compiler_tlog
+        Include="%(Qt_User_Interface_Compiler.Outputs)"
+        Condition="'%(Qt_User_Interface_Compiler.Outputs)' != '' and '%(Qt_User_Interface_Compiler.ExcludedFromBuild)' != 'true'">
+        <Source>@(Qt_User_Interface_Compiler, '|')</Source>
+      </Qt_User_Interface_Compiler_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(Qt_User_Interface_Compiler.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(Qt_User_Interface_Compiler_tlog)' != '' and '%(Qt_User_Interface_Compiler_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(IntDir)$(ProjectName).write.1.tlog"
+      Lines="^%(Qt_User_Interface_Compiler_tlog.Source);@(Qt_User_Interface_Compiler_tlog-&gt;'%(Fullpath)')" />
+    <Qt_User_Interface_Compiler
+      Condition="'@(Qt_User_Interface_Compiler)' != '' and '%(Qt_User_Interface_Compiler.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(Qt_User_Interface_Compiler.CommandLineTemplate)"
+      AdditionalOptions="%(Qt_User_Interface_Compiler.AdditionalOptions)"
+      Inputs="%(Qt_User_Interface_Compiler.Identity)" />
+  </Target>
+  <PropertyGroup>
+    <ComputeLinkInputsTargets>
+            $(ComputeLinkInputsTargets);
+            ComputeQt_User_Interface_CompilerOutput;
+          </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+            $(ComputeLibInputsTargets);
+            ComputeQt_User_Interface_CompilerOutput;
+          </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <Target
+    Name="ComputeQt_User_Interface_CompilerOutput"
+    Condition="'@(Qt_User_Interface_Compiler)' != ''">
+    <ItemGroup>
+      <Qt_User_Interface_CompilerDirsToMake
+        Condition="'@(Qt_User_Interface_Compiler)' != '' and '%(Qt_User_Interface_Compiler.ExcludedFromBuild)' != 'true'"
+        Include="%(Qt_User_Interface_Compiler.Outputs)" />
+      <Link
+        Include="%(Qt_User_Interface_CompilerDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <Lib
+        Include="%(Qt_User_Interface_CompilerDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <ImpLib
+        Include="%(Qt_User_Interface_CompilerDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+    </ItemGroup>
+    <MakeDir
+      Directories="@(Qt_User_Interface_CompilerDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+  <Target
+    Name="_Qt_Resource_Compiler"
+    BeforeTargets="$(Qt_Resource_CompilerBeforeTargets)"
+    AfterTargets="$(Qt_Resource_CompilerAfterTargets)"
+    Condition="'@(Qt_Resource_Compiler)' != ''"
+    DependsOnTargets="$(Qt_Resource_CompilerDependsOn);ComputeQt_Resource_CompilerOutput"
+    Outputs="%(Qt_Resource_Compiler.Outputs)"
+    Inputs="%(Qt_Resource_Compiler.Identity);%(Qt_Resource_Compiler.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup
+      Condition="'@(SelectedFiles)' != ''">
+      <Qt_Resource_Compiler
+        Remove="@(Qt_Resource_Compiler)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <Qt_Resource_Compiler_tlog
+        Include="%(Qt_Resource_Compiler.Outputs)"
+        Condition="'%(Qt_Resource_Compiler.Outputs)' != '' and '%(Qt_Resource_Compiler.ExcludedFromBuild)' != 'true'">
+        <Source>@(Qt_Resource_Compiler, '|')</Source>
+      </Qt_Resource_Compiler_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(Qt_Resource_Compiler.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(Qt_Resource_Compiler_tlog)' != '' and '%(Qt_Resource_Compiler_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(IntDir)$(ProjectName).write.1.tlog"
+      Lines="^%(Qt_Resource_Compiler_tlog.Source);@(Qt_Resource_Compiler_tlog-&gt;'%(Fullpath)')" />
+    <Qt_Resource_Compiler
+      Condition="'@(Qt_Resource_Compiler)' != '' and '%(Qt_Resource_Compiler.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(Qt_Resource_Compiler.CommandLineTemplate)"
+      AdditionalOptions="%(Qt_Resource_Compiler.AdditionalOptions)"
+      Inputs="%(Qt_Resource_Compiler.Identity)" />
+  </Target>
+  <PropertyGroup>
+    <ComputeLinkInputsTargets>
+            $(ComputeLinkInputsTargets);
+            ComputeQt_Resource_CompilerOutput;
+          </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+            $(ComputeLibInputsTargets);
+            ComputeQt_Resource_CompilerOutput;
+          </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <Target
+    Name="ComputeQt_Resource_CompilerOutput"
+    Condition="'@(Qt_Resource_Compiler)' != ''">
+    <ItemGroup>
+      <Qt_Resource_CompilerDirsToMake
+        Condition="'@(Qt_Resource_Compiler)' != '' and '%(Qt_Resource_Compiler.ExcludedFromBuild)' != 'true'"
+        Include="%(Qt_Resource_Compiler.Outputs)" />
+      <Link
+        Include="%(Qt_Resource_CompilerDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <Lib
+        Include="%(Qt_Resource_CompilerDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <ImpLib
+        Include="%(Qt_Resource_CompilerDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+    </ItemGroup>
+    <MakeDir
+      Directories="@(Qt_Resource_CompilerDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+</Project>

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix=".css">
+    <file>estudio3.css</file>
+  </qresource>
+</RCC>

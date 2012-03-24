@@ -1,0 +1,27 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "utils.ps"
+
+sampler s_target:     register(s0);
+sampler s_distortMap: register(s4);
+float4  c_params:     register(c0); // intensity.x, intensity.y, offset.x, offset.y
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR
+{
+	const float2 coord = texCoord + c_params.zw;
+    const float2 dist = unpackNormalT(tex2D(s_distortMap, coord).xyz).xy;
+	const float4 col = tex2D(s_target, texCoord + dist * c_params.xy);
+    
+    return col;
+}

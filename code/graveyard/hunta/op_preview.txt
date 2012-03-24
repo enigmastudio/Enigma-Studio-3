@@ -1,0 +1,131 @@
+    class ToolTip : public QGraphicsPixmapItem, public QObject
+    {
+    public:
+        ToolTip(eGuiOpPage *ownerPage, eIOperator *op) : QGraphicsPixmapItem(eNULL, ownerPage),
+            m_timerId(startTimer(SHOW_DELAY))
+        {
+            eASSERT(ownerPage != eNULL);
+
+            hide();
+            _createPixmap(op, ownerPage->getRenderer());
+        }
+
+        virtual ~ToolTip()
+        {
+            if (m_timerId != -1)
+            {
+                killTimer(m_timerId);
+            }
+        }
+
+    private:
+        virtual void timerEvent(QTimerEvent *te)
+        {
+            QObject::timerEvent(te);
+
+            show();
+            killTimer(m_timerId);
+            m_timerId = -1;
+        }
+
+    private:
+        void _createPixmap(eIOperator *op, eIRenderer *renderer)
+        {
+            eASSERT(op != eNULL);
+
+            /*
+            eStateManager::push();
+
+            if (m_target == eNULL)
+            {
+                m_target = renderer->getGraphicsApi()->createTexture2d(64, 64, eTRUE, eFALSE, eFALSE, eFORMAT_ARGB8);
+                eASSERT(m_target != eNULL);
+            }
+
+            const eCamera cam(45.0f, m_target->getWidth()/m_target->getHeight(), 0.01f, 1000.0f);
+            op->render(renderer, m_target);
+
+            QImage image(64, 64, QImage::Format_ARGB32);
+
+            eByteArray rtData;
+            m_target->getRenderTargetData(rtData);
+
+            eMemCopy(image.bits(), &rtData[0], 4*64*64);
+
+            setPixmap(QPixmap::fromImage(image));
+
+            eStateManager::pop();
+            */
+        }
+
+    private:
+        static const eInt   SHOW_DELAY = 750;
+
+    private:
+        eInt            m_timerId;
+
+    private:
+        static eITexture2d * m_target;
+        static eITexture2d * m_rtData;
+    };
+
+
+
+
+void eGuiOperator::hoverEnterEvent(QGraphicsSceneHoverEvent *he)
+{
+    eASSERT(m_toolTip == eNULL);
+
+    QGraphicsItem::hoverEnterEvent(he);
+
+    QPixmap pm(64, 64);
+    pm.fill(Qt::red);
+
+    /*
+    m_toolTip = new ToolTip(m_ownerPage, m_op);
+    eASSERT(m_toolTip != eNULL);
+    m_toolTip->setPixmap(pm);
+    m_toolTip->setPos(pos()+boundingRect().topRight());
+    */
+}
+
+void eGuiOperator::hoverLeaveEvent(QGraphicsSceneHoverEvent *he)
+{
+    QGraphicsItem::hoverLeaveEvent(he);
+
+    //eSAFE_DELETE(m_toolTip);
+}
+
+
+
+void eTexture2dDx9::getRenderTargetData(eByteArray &data) const
+{
+    eASSERT(m_d3dDev != eNULL);
+
+    data.resize(m_width*m_height*m_pixelSize);
+
+    IDirect3DTexture9 *tex = eNULL;
+    IDirect3DSurface9 *surf = eNULL;
+
+    HRESULT res = m_d3dDev->CreateTexture(m_width, m_height, 0, 0, m_d3dFormat, D3DPOOL_SYSTEMMEM, &tex, eNULL);
+    eASSERT(!FAILED(res));
+    res = tex->GetSurfaceLevel(0, &surf);
+    eASSERT(!FAILED(res));
+    res = m_d3dDev->GetRenderTargetData(m_d3dSurface, surf);
+    eASSERT(!FAILED(res));
+
+    D3DLOCKED_RECT lr;
+    res = tex->LockRect(0, &lr, eNULL, 0);
+    eASSERT(!FAILED(res));
+    eMemCopy(&data[0], lr.pBits, data.size());
+    res = tex->UnlockRect(0);
+    eASSERT(!FAILED(res));
+
+    eSAFE_RELEASE_COM(surf);
+    eSAFE_RELEASE_COM(tex);
+}
+
+IDirect3DSurface9 * eTexture2dDx9::getD3dSurface() const
+{
+    return m_d3dSurface;
+}

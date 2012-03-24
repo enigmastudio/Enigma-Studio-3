@@ -1,0 +1,67 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+sampler s_target: register(s0);
+sampler s_posMap: register(s2);
+
+float4  c_params: register(c0); // type, start, end, density
+float3  c_fogCol: register(c1);
+
+#define TYPE_LINEAR 0
+#define TYPE_EXP    1
+#define TYPE_EXPSQR 2
+
+float linearFog(const float start, const float end, const float depth)
+{
+    return saturate((end-depth)/(end-start));
+}
+
+float expFog(const float density, const float depth)
+{
+    return exp(-depth*density);
+}
+
+float expSqrFog(const float density, const float depth)
+{
+    const float e = depth*density;
+    return exp(-e*e);
+}
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR
+{
+    const float4 col = tex2D(s_target, texCoord);
+    const float4 pos = tex2D(s_posMap, texCoord);
+
+    const int type      = (int)c_params.x;
+    const float start   = c_params.y;
+    const float end     = c_params.z;
+    const float density = c_params.w;
+    const float depth   = length(pos);
+
+    float f = 0.0f;
+
+    if (type == TYPE_LINEAR)
+    {
+        f = linearFog(start, end, depth);
+    }
+    else if (type == TYPE_EXP)
+    {
+        f = expFog(density, depth);
+    }
+    else if (type == TYPE_EXPSQR)
+    {
+        f = expSqrFog(density, depth);
+    }
+    
+    return lerp(float4(c_fogCol, col.a), col, f);
+}

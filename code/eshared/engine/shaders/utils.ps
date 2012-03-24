@@ -1,0 +1,71 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// calculates tangent space coordinate system
+// on a per pixel basis in the pixel shader
+float3x3 calcTangentFrame(const float3 normal, const float3 pos, const float2 texCoord)
+{
+    const float3 dp0 = ddx(pos);
+    const float3 dp1 = ddy(pos);
+    const float2 duv0 = ddx(texCoord);
+    const float2 duv1 = ddy(texCoord);
+
+    const float3x3 m = float3x3(dp0, dp1, cross(dp0, dp1));
+    const float2x3 invM = float2x3(cross(m[1], m[2]), cross(m[2], m[0]));
+
+    const float3 tangent = mul(float2(duv0.x, duv1.x), invM);
+    const float3 binormal = mul(float2(duv0.y, duv1.y), invM);
+
+    return float3x3(normalize(tangent), normalize(binormal), normal);
+}
+
+// normal decoding for normal maps:
+// mapping from [0,1] -> [-1, 1]
+float3 unpackNormalT(const float3 normal)
+{
+	return 2.0f*normal-1.0f;
+}
+
+float2 postProjectionToScreenSpace(const float4 hpos)
+{
+    const float2 screenPos = hpos.xy/hpos.w;
+    return 0.5f*(float2(screenPos.x, -screenPos.y)+1.0f);
+}
+
+float schlickPow(const float base, const float exp)
+{
+    return base/(exp-base*exp+base);
+}
+
+float3 phong(const float3 surfaceNormal, const float3 lightPos, const float3 surfacePos,
+             const float invLightRange, const float3 lightDiffCol, const float3 lightSpecCol,
+             const float3 diffuseCol, const float3 specCol, const float shininess)
+{
+	float3 lightVec = lightPos-surfacePos;
+    const float3 viewVec = normalize(-surfacePos);
+    const float3 halfVec = normalize(lightVec+viewVec);
+	
+    const float lightVecLen = length(lightVec);
+	const float att = saturate(1.0f-lightVecLen*invLightRange);
+	lightVec /= lightVecLen;
+	
+	const float3 diff = saturate(dot(lightVec, surfaceNormal))*lightDiffCol;
+    const float3 spec = schlickPow(saturate(dot(halfVec, surfaceNormal)), shininess)*lightSpecCol;
+
+	return att*(diffuseCol*diff+specCol*spec);
+}
+
+float grayScale(const float3 color)
+{
+	return dot(float3(0.3f, 0.59f, 0.11f), color);
+}

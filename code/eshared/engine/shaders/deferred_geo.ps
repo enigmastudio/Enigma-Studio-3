@@ -1,0 +1,195 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "globals.ps"
+#include "utils.ps"
+
+struct v2f
+{
+    float2 texCoord:    TEXCOORD0;  // texture coordinate
+    float3 vpos:        TEXCOORD1;  // position (view-space)
+    float3 normal:      TEXCOORD2;  // normal (view-space)
+    float3 color:       COLOR0;     // color
+
+    float3 viewDirWs:   TEXCOORD5;
+    float3 normalWs:    TEXCOORD6;
+};
+
+struct f2mrt
+{
+    float4 color0:      COLOR0; // diffCol
+    float4 color1:      COLOR1; // normal
+    float4 color2:      COLOR2; // specular
+    float4 color3:      COLOR3; // position + material index
+};
+
+sampler s_diffuseMap:   register(s0);
+sampler s_normalMap:    register(s1);
+sampler s_specMap:      register(s2);
+sampler s_depthMap:     register(s4);
+
+f2mrt main(const v2f input)
+{
+    // map normal from tangent-space to view-space
+	const float3x3 tf = calcTangentFrame(input.normal, input.vpos, input.texCoord);
+    float3 normal = tex2D(s_normalMap, input.texCoord).xyz;
+    normal = normalize(mul(unpackNormalT(normal), tf));
+
+    // read other samplers and output data
+    const float3 diffCol = tex2D(s_diffuseMap, input.texCoord).rgb;
+    const float3 specCol = tex2D(s_specMap, input.texCoord).rgb;
+
+    f2mrt output = (f2mrt)0;
+
+    output.color0 = float4(diffCol*c_matDiffuseCol*input.color, 1.0f);
+    output.color1 = float4(normal, 0.0f);
+    output.color2 = float4(specCol*c_matSpecCol, c_matShininess);
+    output.color3 = float4(input.vpos, c_matIndex);
+
+    return output;
+}
+
+/*
+f2mrt main(const v2f input)
+{
+float minSamples = 20;
+float maxSamples = 50;
+float heightScale = 0.1f;
+
+    float3 color;
+
+    float3 inV = input.viewDirWs*(-2.0f)/2.0f;
+	float3x3 tangentFrame = calcTangentFrame(input.normalWs, inV, input.texCoord);
+	float3 view = mul(tangentFrame, input.viewDirWs);
+	
+	float2 vParallaxOffset = view.xy/view.z;
+	vParallaxOffset *= heightScale;
+	
+	float2 fTexCoordsPerSize = input.texCoord;
+	
+    float4 temp = ddx( float4( fTexCoordsPerSize, input.texCoord ) );
+    float2 dxSize = temp.xy;
+    float2 dx = temp.zw;
+    temp = ddy( float4( fTexCoordsPerSize, input.texCoord ) );
+    float2 dySize = temp.xy;
+    float2 dy = temp.zw;
+                  
+	float fMipLevel;
+	float fMipLevelInt;    // mip level integer portion
+	float fMipLevelFrac;   // mip level fractional amount for blending in between levels
+
+	float  fMinTexCoordDelta;
+	float2 dTexCoords;
+
+	// Find min of change in u and v across quad: compute du and dv magnitude across quad
+	dTexCoords = dxSize * dxSize + dySize * dySize;
+
+	// Standard mipmapping uses max here
+	fMinTexCoordDelta = max(dTexCoords.x, dTexCoords.y);
+
+	// Compute the current mip level  (* 0.5 is effectively computing a square root before )
+	fMipLevel = max(0.5f * log2( fMinTexCoordDelta ), 0.0f);
+	
+	// Start the current sample located at the input texture coordinate, which would correspond
+   	// to computing a bump mapping result:
+   	float2 texSample = input.texCoord;
+   
+   	// Multiplier for visualizing the level of detail (see notes for 'nLODThreshold' variable
+   	// for how that is done visually)
+   	//float4 cLODColoring = float4( 1, 1, 3, 1 );
+
+   	float fOcclusionShadow = 1.0f;
+   	
+   	float3 viewWS = normalize(input.viewDirWs);
+   	float3 normalWS = normalize(input.normalWs);
+   	
+ 	int nNumSteps = (int)lerp(minSamples, maxSamples, dot(viewWS, normalWS));
+
+   	float fCurrHeight = 0.0;
+	float fStepSize   = 1.0 / (float)nNumSteps;
+	float fPrevHeight = 1.0;
+	float fNextHeight = 0.0;
+
+	int    nStepIndex = 0;
+	bool   bCondition = true;
+
+	float2 vTexOffsetPerStep = fStepSize * vParallaxOffset;
+	float2 vTexCurrentOffset = input.texCoord;
+	float  fCurrentBound     = 1.0;
+	float  fParallaxAmount   = 0.0;
+
+	float2 pt1 = 0;
+	float2 pt2 = 0;
+   
+	float2 texOffset2 = 0;
+
+	while(nStepIndex < nNumSteps) 
+    {
+        vTexCurrentOffset -= vTexOffsetPerStep;
+        fCurrHeight = tex2D(s_depthMap, vTexCurrentOffset, dx, dy).x;
+        fCurrentBound -= fStepSize;
+
+        if(fCurrHeight > fCurrentBound) 
+        {   
+           pt1 = float2(fCurrentBound, fCurrHeight);
+           pt2 = float2(fCurrentBound + fStepSize, fPrevHeight);
+
+           texOffset2 = vTexCurrentOffset - vTexOffsetPerStep;
+           nStepIndex = nNumSteps + 1;
+        }
+        else
+        {
+           nStepIndex++;
+           fPrevHeight = fCurrHeight;
+        }
+	}
+
+	float fDelta2 = pt2.x - pt2.y;
+    float fDelta1 = pt1.x - pt1.y;
+
+         
+    float fDenominator = fDelta2 - fDelta1;
+    // SM 3.0 requires a check for divide by zero, since that operation will generate
+    // an 'Inf' number instead of 0, as previous models (conveniently) did:
+    if(fDenominator == 0.0f)
+    {
+		fParallaxAmount = 0.0f;
+	}
+	else
+	{
+		fParallaxAmount = (pt1.x * fDelta2 - pt2.x * fDelta1 ) / fDenominator;
+	}
+	  
+    vParallaxOffset *= (1.0f - fParallaxAmount);
+
+    // The computed texture offset for the displaced point on the pseudo-extruded surface:
+    texSample = input.texCoord - vParallaxOffset;
+
+
+    color = tex2D(s_diffuseMap, texSample).rgb;
+
+    float3x3 tf2 = calcTangentFrame(input.normal, input.vpos, texSample);
+    float3 N = normalize(mul(unpackNormalT(f3tex2D(s_normalMap, texSample)), tf2));
+
+    const float3 specCol = f3tex2D(s_specMap, texSample);
+
+    f2mrt output = (f2mrt)0;
+
+    output.color0 = float4(color, 1.0f);
+    output.color1 = float4(N, 1.0f);
+    output.color2 = float4(specCol*c_matSpecCol, c_matShininess);
+    output.color3 = float4(input.vpos, c_matIndex);
+	
+    return output;
+}
+*/

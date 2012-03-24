@@ -1,0 +1,63 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "utils.ps"
+
+sampler s_source0: register(s0);
+sampler s_source1: register(s1);
+
+float4  c_params:  register(c0); // mode, blend ratio 0, blend ratio 1
+
+#define MODE_ADD        0
+#define MODE_SUB        1
+#define MODE_MUL        2
+#define MODE_BRIGHTER   3
+#define MODE_DARKER     4
+#define MODE_NONE       5
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR 
+{
+    const float4 col0   = tex2D(s_source0, texCoord);
+    const float4 col1   = tex2D(s_source1, texCoord);
+    
+    const int mode      = (int)c_params.x;
+    const float ratio0  = c_params.y;
+    const float ratio1  = c_params.z;
+
+    if (mode == MODE_ADD)
+    {
+        return ratio0*col0+ratio1*col1;
+    }
+    else if (mode == MODE_SUB)
+    {
+        return ratio0*col0-ratio1*col1;
+    }
+    else if (mode == MODE_MUL)
+    {
+        return col0*col1;
+    }
+    else if (mode == MODE_BRIGHTER)
+    {
+        return (grayScale(col0.rgb) > grayScale(col1.rgb) ? col0 : col1);
+    }
+    else if (mode == MODE_DARKER)
+    {
+        return (grayScale(col0.rgb) < grayScale(col1.rgb) ? col0 : col1);
+    }
+    else if (mode == MODE_NONE)
+    {
+        return col0*(1.0f-col1.a)+col1;
+    }
+
+    return float4(0.0f, 0.0f, 0.0f, 1.0f);
+}

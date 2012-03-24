@@ -1,0 +1,40 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+sampler s_target: register(s0);
+
+float4  c_params: register(c0); // ampli, length, speed, time
+float2  c_offset: register(c1);
+int     c_mode:   register(c2);
+
+#define STANDARD    0
+#define CONCENTRIC  1 
+
+float4 main(float2 texCoord: TEXCOORD0) : COLOR 
+{
+    const float ampli = c_params.x;
+    const float len   = c_params.y;
+    const float speed = c_params.z;
+    const float time  = c_params.w;
+
+    if (c_mode == STANDARD)
+    {
+        texCoord += sin(texCoord*len+time*speed+c_offset)*ampli;	
+    }
+    else if (c_mode == CONCENTRIC)
+    {
+        texCoord += sin(length(texCoord-c_offset)*len+time*speed)*ampli;
+    }
+
+    return tex2D(s_target, texCoord);
+}

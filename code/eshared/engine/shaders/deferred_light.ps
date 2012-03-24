@@ -1,0 +1,42 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "globals.ps"
+#include "utils.ps"
+
+sampler s_diffuseG:		register(s0);	// render targets from
+sampler s_normalG:		register(s1);	// deferred shading g-buffer
+sampler s_specularG:	register(s2);
+sampler s_positionG:	register(s3);
+sampler s_defShadowMap: register(s4);	// deferred shadow map
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR 
+{
+    // do shadowing
+	const float occlusion = tex2D(s_defShadowMap, texCoord).r;
+
+    if (occlusion == 1.0f)
+    {
+        return float4(0.0f, 0.0f, 0.0f, 1.0f);
+    }
+
+    // evaluate lighting model
+	const float3 pos     = tex2D(s_positionG, texCoord).xyz;
+	const float3 normal  = tex2D(s_normalG, texCoord).xyz;
+	const float3 diffCol = tex2D(s_diffuseG,texCoord).xyz;
+	const float4 specCol = tex2D(s_specularG,texCoord);
+
+    const float3 col = (1.0f-occlusion)*phong(normal, c_lightViewPos, pos, c_lightInvRange, c_lightDiffuseCol,
+                                              c_lightSpecCol, diffCol, specCol.xyz, specCol.w);
+    return float4(col, 1.0f);
+}

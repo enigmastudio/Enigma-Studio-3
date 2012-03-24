@@ -1,0 +1,41 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "globals.ps"
+
+sampler s_envMap:       register(s0);	// environment cube-map
+sampler s_normalG:		register(s1);	// deferred shading g-buffers
+sampler s_specMap:      register(s2);
+sampler s_positionG:	register(s3);
+
+struct v2f
+{
+	float2 texCoord:    TEXCOORD0;
+	float3 vpos:        TEXCOORD1;
+};
+
+float4 main(const v2f input) : COLOR
+{
+	const float4 posMatIdx = tex2D(s_positionG, input.texCoord);
+	const float3 spec = tex2D(s_specMap, input.texCoord).rgb;
+	const float3 normal = tex2D(s_normalG, input.texCoord).xyz;
+
+    const float3 pos = posMatIdx.xyz;
+    const float matIndex = posMatIdx.w;
+	
+	const float3 view = normalize(pos);
+	const float3 envCoord = reflect(view, normal);
+    const float3 env = texCUBE(s_envMap, envCoord).rgb;
+
+	return (c_matIndex == matIndex ? float4(spec*env, 1.0f) : float4(0.0f, 0.0f, 0.0f, 1.0f));
+}

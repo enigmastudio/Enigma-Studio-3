@@ -1,0 +1,43 @@
+    eGeometry geoLines(m_gfx, mesh.getFaceCount()*16, 0, mesh.getFaceCount()*8,
+                       eVDECL_WIRE_VERTEX, eGeometry::TYPE_DYNAMIC, ePRIMTYPE_LINELIST);
+
+    eU32 vc = 0;
+    eU32 pc = 0;
+
+    geoLines.startFilling((ePtr *)&vertices, eNULL);
+    {
+        for (eU32 i=0; i<mesh.getFaceCount(); i++)
+        {
+            const eEditMesh::Face *face = mesh.getFace(i);
+            eASSERT(face != eNULL);
+
+            eEditMesh::HalfEdge *he = face->he;
+            eVector3 center = face->getCenter();
+
+            eRandomize(i);
+            eColor color(eRandom(0, 255), eRandom(0, 255), eRandom(0, 255), 255);
+
+            do
+            {
+                const eVector3 p0 = he->origin->position;
+                const eVector3 p1 = he->next->origin->position;
+                vertices[vc++].set(p0-(p0-center).normalized()*0.05f, color);
+                vertices[vc++].set(p1-(p1-center).normalized()*0.05f, color);
+                pc++;
+
+                if (he->twin->face == eNULL)
+                {
+                    const eVector3 p2 = he->twin->origin->position;
+                    const eVector3 p3 = he->twin->next->origin->position;
+                    vertices[vc++].set(p2, color);
+                    vertices[vc++].set(p3, color);
+                    pc++;
+                }
+
+                he = he->next;
+            }
+            while (he != face->he);
+        }
+    }
+    geoLines.stopFilling(eTRUE, vc, 0, pc);
+    geoLines.render();

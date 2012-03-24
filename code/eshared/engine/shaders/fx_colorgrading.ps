@@ -1,0 +1,22 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+sampler s_source: register(s0);
+sampler s_lookupMap: register(s4);
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR
+{
+    const float3 color = tex2D(s_source, texCoord).xyz;
+    const float3 final = tex3D(s_lookupMap, color).xyz;
+    return float4(final, 1.0f);
+}

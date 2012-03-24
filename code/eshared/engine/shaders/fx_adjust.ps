@@ -1,0 +1,29 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+sampler s_target:   register(s0);
+
+float   c_contrast: register(c0);
+float3  c_adjCol:   register(c1);
+float3  c_subCol:   register(c2);
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR 
+{
+    const float4 col = tex2D(s_target, texCoord);
+	
+    float3 res = col.rgb*c_adjCol; // adjust color = color*brightess
+    res = (res-0.5f)*c_contrast+0.5f;
+    res -= c_subCol;
+
+    return float4(res, col.a);
+}

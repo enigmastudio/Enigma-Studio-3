@@ -1,0 +1,25 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+sampler s_texMap: register(s0);
+
+struct v2f
+{
+	float2 texCoord:    TEXCOORD0;
+	float4 color:       COLOR0;
+};
+
+float4 main(const v2f input) : COLOR 
+{
+	return tex2D(s_texMap, input.texCoord)*input.color;
+}

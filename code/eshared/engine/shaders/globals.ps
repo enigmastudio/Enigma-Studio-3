@@ -1,0 +1,32 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+float3	c_lightViewPos:			register(c0);   // light position in view-space
+float3  c_lightWorldPos:	    register(c1); 	// light position in world-space
+float	c_lightInvRange:		register(c2);   // 1 / light range
+float	c_lightPenumbraSize:	register(c3);   // size of light's penumbra (soft shadow region)
+float   c_lightShadowBias:      register(c4);   // depth bias for soft-shadows
+
+float3	c_lightDiffuseCol:		register(c5);   // light diffuse color
+float3	c_lightTotalAmbientCol:	register(c6);   // light ambient color
+float3	c_lightSpecCol:			register(c7);   // light specular color
+
+float3	c_matRefractionCol:		register(c8);   // material refraction color
+float	c_matRefractionIntens:	register(c9);   // material refraction color
+float3	c_matDiffuseCol:        register(c10);  // material diffuse color
+float3	c_matSpecCol:			register(c11);  // material specular color
+float	c_matShininess:			register(c12);  // material specular color
+float	c_matIndex:				register(c13);  // material index scaled to [0,1]
+
+float2	c_camProjShadowZ:		register(c14);	// scale and bias needed for projecting depth for shadows
+float2	c_shadowMapSize:		register(c15);	// size of unwrapped shadow (depth) map

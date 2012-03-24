@@ -1,0 +1,382 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ *
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "../system/system.hpp"
+#include "../math/math.hpp"
+#include "engine.hpp"
+
+eMesh::eMesh(eIGraphicsApi *gfx, Type type, eU32 triCount, eU32 vertexCount) :
+    m_gfx(gfx),
+    m_type(type)
+{
+    eASSERT(gfx != eNULL);
+    eASSERT(triCount > 0);
+    eASSERT(vertexCount > 0);
+
+    reserveSpace(triCount, vertexCount);
+}
+
+eMesh::eMesh(eIGraphicsApi *gfx, Type type, const eEditMesh &em) :
+    m_gfx(gfx),
+    m_type(type)
+{
+    eASSERT(gfx != eNULL);
+
+    if (em.isTriangulated())
+    {
+        fromEditMesh(em);
+    }
+    else
+    {
+        eEditMesh triMesh(em);
+
+        triMesh.triangulate();
+        fromEditMesh(triMesh);
+    }
+}
+
+eMesh::~eMesh()
+{
+    _free();
+}
+
+eBool eMesh::upload()
+{
+    if (m_type == TYPE_STATIC)
+    {
+        for (eU32 i=0; i<m_drawSections.size(); i++)
+        {
+            DrawSection &ds = m_drawSections[i];
+
+            eVertex *vertices = eNULL;
+            eU32 *indices = eNULL;
+
+            ds.geometry->startFilling((ePtr *)&vertices, &indices);
+            {
+                for (eU32 j=0; j<ds.vertices.size(); j++)
+                {
+                    vertices[j] = *ds.vertices[j];
+                }
+
+                if (indices)
+                {
+                    eMemCopy(indices, &ds.indices[0], ds.indices.size()*sizeof(eU32));
+                }
+            }
+            ds.geometry->stopFilling();
+        }
+    }
+
+    return eTRUE;
+}
+
+eBool eMesh::unload()
+{
+    return eTRUE;
+}
+
+void eMesh::reserveSpace(eU32 triCount, eU32 vertexCount)
+{
+    m_vertices.reserve(vertexCount);
+    m_triangles.reserve(triCount);
+}
+
+// Has to be called after last vertex/triangle was added
+// to the mesh, because creating resources in upload/unload
+// functions isn't possible. Further the generation of the
+// indexed triangles is too slow for dynamic meshes.
+void eMesh::finishLoading()
+{
+    eArray<eU32> posMap(m_vertices.size());
+
+    for (eU32 i=0; i<m_drawSections.size(); i++)
+    {
+        // Create vertex and index lists for draw section.
+        DrawSection &ds = m_drawSections[i];
+        eMemSet(&posMap[0], -1, posMap.size()*sizeof(eU32));
+
+        for (eU32 j=0, vertexCount=0; j<ds.triangles.size(); j++)
+        {
+            const Triangle &tri = m_triangles[ds.triangles[j]];
+
+            for (eU32 k=0; k<3; k++)
+            {
+                const eU32 vtxIndex = tri.indices[k];
+
+                if (posMap[vtxIndex] == -1)
+                {
+                    posMap[vtxIndex] = vertexCount++;
+
+                    ds.vertices.append(&m_vertices[vtxIndex]);
+                    ds.indices.append(posMap[vtxIndex]);
+                }
+                else
+                {
+                    ds.indices.append(posMap[vtxIndex]);
+                }
+            }
+        }
+
+        eASSERT(ds.indices.size() == ds.triangles.size()*3);
+
+        // Create geometry object for draw section.
+        /*
+        eGeometry::Type geoType = (m_type == TYPE_STATIC ? eGeometry::TYPE_STATIC_INDEXED : eGeometry::TYPE_DYNAMIC_INDEXED);
+
+        eSAFE_DELETE(ds.geometry);
+        ds.geometry = new eGeometry(m_gfx, ds.vertices.size(), ds.indices.size(), ds.triangles.size(), 
+                                    eVDECL_DEFAULT_VERTEX, geoType, ePRIMTYPE_TRIANGLELIST, _fillDynamicBuffers, &ds);
+        eASSERT(ds.geometry != eNULL);
+        */
+
+        eSAFE_DELETE(ds.geometry);
+        ds.geometry = new eGeometry(m_gfx, ds.vertices.size()*4, ds.vertices.size()*6, ds.vertices.size()*2, eVDECL_PARTICLE_VERTEX, eGeometry::TYPE_DYNAMIC_INDEXED, ePRIMTYPE_TRIANGLELIST, _fillDynamicBuffers, &ds);
+    }
+}
+
+// The given editable mesh has to be triangulated.
+void eMesh::fromEditMesh(const eEditMesh &em)
+{
+    eASSERT(em.isTriangulated() == eTRUE);
+
+    _free();
+
+    // sprite mode
+    reserveSpace(0, em.getVertexCount());
+
+    for (eU32 i=0; i<em.getVertexCount(); i++)
+    {
+        eU32 a = addVertex(em.getVertex(i)->position, eVector3(), eVector2());
+        eU32 b = addVertex(em.getVertex(i)->position, eVector3(), eVector2());
+        eU32 c = addVertex(em.getVertex(i)->position, eVector3(), eVector2());
+
+        addTriangle(a, b, c, em.getVertex(i)->he->face->material);
+    }
+
+    /*
+    reserveSpace(em.getFaceCount(), em.getVertexCount());
+
+    eHashMap<const eEditMesh::Vertex *, eU32> v2i(em.getVertexCount());
+    eArray<eU32> indices;
+
+    for (eU32 i=0; i<em.getFaceCount(); i++)
+    {
+        const eEditMesh::Face *face = em.getFace(i);
+        eASSERT(face != eNULL);
+        eEditMesh::HalfEdge *he = face->he;
+
+        indices.clear();
+
+        do
+        {
+            const eEditMesh::Vertex *vtx = he->origin;
+            eASSERT(vtx != eNULL);
+
+            // Check if vertices have to be duplicated.
+            if (he->texCoord != vtx->texCoord)
+            {
+                // Yes, so add new vertex.
+                addVertex(vtx->position, vtx->normal, he->texCoord);
+                indices.append(m_vertices.size()-1);
+            }
+            else if (!v2i.exists(vtx))
+            {
+                // No and vertex was not added yet.
+                addVertex(vtx->position, vtx->normal, vtx->texCoord);
+                indices.append(m_vertices.size()-1);
+                v2i.insert(vtx, m_vertices.size()-1);
+            }
+            else
+            {
+                // Yes and vertex was already added before.
+                indices.append(v2i[vtx]);
+            }
+
+            he = he->next;
+        }
+        while (he != face->he);
+
+        eASSERT(indices.size() == 3);
+        addTriangle(indices[0], indices[1], indices[2], face->material);
+    }
+    */
+
+    finishLoading();
+    upload();
+}
+
+eU32 eMesh::addVertex(const eVector3 &pos, const eVector3 &normal, const eVector2 &texCoord)
+{
+    m_vertices.append(eVertex(pos, normal, texCoord));
+    m_bbox.updateExtents(pos);
+
+    return m_vertices.size()-1;
+}
+
+// Returns index of the added triangle.
+eU32 eMesh::addTriangle(eU32 vtx0, eU32 vtx1, eU32 vtx2, const eMaterial *mat)
+{
+    eASSERT(vtx0 < m_vertices.size());
+    eASSERT(vtx1 < m_vertices.size());
+    eASSERT(vtx2 < m_vertices.size());
+
+    Triangle tri;
+
+    tri.indices[0] = vtx0;
+    tri.indices[1] = vtx1;
+    tri.indices[2] = vtx2;
+
+    m_triangles.append(tri);
+    const eU32 triIndex = m_triangles.size()-1;
+
+    // Try to find draw section for given material.
+    for (eU32 i=0; i<m_drawSections.size(); i++)
+    {
+        DrawSection &ds = m_drawSections[i];
+
+        if (ds.material == mat)
+        {
+            ds.triangles.append(triIndex);
+            return triIndex;
+        }
+    }
+
+    // Material not found so add new draw section.
+    m_drawSections.append(DrawSection());
+    DrawSection &ds = m_drawSections[m_drawSections.size()-1];
+    ds.material = mat;
+    ds.geometry = eNULL;
+    ds.triangles.append(triIndex);
+    return triIndex;
+}
+
+// Returns index of the second triangle added.
+eU32 eMesh::addQuad(eU32 vtx0, eU32 vtx1, eU32 vtx2, eU32 vtx3, const eMaterial *mat)
+{
+    const eU32 idx0 = addTriangle(vtx0, vtx1, vtx2, mat);
+    const eU32 idx1 = addTriangle(vtx0, vtx2, vtx3, mat);
+
+    eASSERT(idx0 == idx1-1);
+    return idx1;
+}
+
+const eVertex & eMesh::getVertex(eU32 index) const
+{
+    return m_vertices[index];
+}
+
+const eMesh::Triangle & eMesh::getTriangle(eU32 index) const
+{
+    return m_triangles[index];
+}
+
+const eMesh::DrawSection & eMesh::getDrawSection(eU32 index) const
+{
+    return m_drawSections[index];
+}
+
+eMesh::DrawSection & eMesh::getDrawSection(eU32 index)
+{
+    return m_drawSections[index];
+}
+
+eU32 eMesh::getVertexCount() const
+{
+    return m_vertices.size();
+}
+
+eU32 eMesh::getTriangleCount() const
+{
+    return m_triangles.size();
+}
+
+eU32 eMesh::getDrawSectionCount() const
+{
+    return m_drawSections.size();
+}
+
+const eAABB & eMesh::getBoundingBox() const
+{
+    return m_bbox;
+}
+
+void eMesh::_fillDynamicBuffers(ePtr param, eGeometry *geo)
+{
+    eASSERT(geo != eNULL);
+
+    DrawSection *ds = (DrawSection *)param;
+    eASSERT(ds != eNULL);
+
+    //eVertex *vertices = eNULL;
+    eParticleVertex *vertices = eNULL;
+    eU32 *indices = eNULL;
+    eVector3 s, t;
+
+    geo->getGraphics()->getBillboardVectors(s, t);
+
+    geo->startFilling((ePtr *)&vertices, &indices);
+    {
+        eU32 idxCount = 0;
+
+        for (eU32 i=0; i<ds->vertices.size(); i++)
+        {
+            const eF32 size = 0.5f*(ds->material ? ds->material->getPrimitiveSize() : 1.0f);
+
+            //const eVector3 s = (view^ds->vertices[i]->position).normalized()*size;
+			//const eVector3 t = (view^s)*size;
+
+            const eVector3 r = s*size;
+            const eVector3 u = t*size;
+
+            vertices[i*4+0].set(ds->vertices[i]->position-r-u, eVector2(0.0f, 0.0f), eColor::WHITE);
+            vertices[i*4+1].set(ds->vertices[i]->position-r+u, eVector2(0.0f, 1.0f), eColor::WHITE);
+            vertices[i*4+2].set(ds->vertices[i]->position+r+u, eVector2(1.0f, 1.0f), eColor::WHITE);
+            vertices[i*4+3].set(ds->vertices[i]->position+r-u, eVector2(1.0f, 0.0f), eColor::WHITE);
+
+            indices[idxCount++] = i*4+0;
+            indices[idxCount++] = i*4+1;
+            indices[idxCount++] = i*4+2;
+            indices[idxCount++] = i*4+0;
+            indices[idxCount++] = i*4+2;
+            indices[idxCount++] = i*4+3;
+        }
+
+        /*
+        for (eU32 i=0; i<ds->vertices.size(); i++)
+        {
+            vertices[i] = *ds->vertices[i];
+        }
+
+        eMemCopy(indices, &ds->indices[0], ds->indices.size()*sizeof(eU32));
+        */
+    }
+    geo->stopFilling();
+}
+
+void eMesh::_free()
+{
+    // Free triangle arrays (destructor isn't called,
+    // because of 64k-implementation of array class).
+    for (eU32 i=0; i<m_drawSections.size(); i++)
+    {
+        DrawSection &ds = m_drawSections[i];
+
+        ds.triangles.free();
+        ds.indices.free();
+        ds.vertices.free();
+
+        eSAFE_DELETE(ds.geometry);
+    }
+    
+    m_drawSections.clear();
+}

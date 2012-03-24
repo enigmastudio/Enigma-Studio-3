@@ -1,0 +1,2808 @@
+<?xml version="1.0"?>
+<enigma version="3.11b">
+  <pages>
+    <page id="1879698787" name="Start page">
+      <operator width="3" bypassed="0" username="" hidden="0" type="Model : Light" id="342107556" ypos="6" xpos="36">
+        <parameter animated="0" pathid="0" value0="2.25" value1="2.44" value2="2.48" animscale="0" animchan="1" name="Position" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" animscale="0" animchan="1" name="Range" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1062501089" value2="1057635697" animscale="0" animchan="1" name="Diffuse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Ambient" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Specular" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Shadows" name="Shadows" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Casts shadows" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="63" animscale="0" animchan="1" name="Shadowed faces" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="3.59" animscale="0" animchan="1" name="Penumbra size" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.001" animscale="1" animchan="1" name="Shadow bias" animoffset="0"/>
+      </operator>
+      <operator width="6" bypassed="0" username="" hidden="0" type="Effect : Camera" id="449000076" ypos="10" xpos="36">
+        <parameter animated="0" pathid="0" value0="45" animscale="0" animchan="1" name="Field of view" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Aspect ratio" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.01" animscale="0" animchan="1" name="Near plane" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1000" animscale="0" animchan="1" name="Far plane" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="-5.26" value1="3.57" value2="2.49" animscale="0" animchan="1" name="Position" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Look at" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="1" value2="0" animscale="0" animchan="1" name="Up vector" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Sequencer : Scene" id="541505804" ypos="4" xpos="50">
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Start time" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" animscale="0" animchan="1" name="Duration" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Track" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Extended properties" name="Extended properties" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Time offset" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Time scale" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Blending" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" value1="1" animscale="0" animchan="1" name="Blend ratios" animoffset="0"/>
+      </operator>
+      <operator width="9" bypassed="0" username="" hidden="0" type="Misc : Demo" id="586010740" ypos="5" xpos="50">
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Aspect ratio" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Unnamed" name="Production name" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Loading screen" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="New song" name="Song" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Rotation start" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Rotation end" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Rotation current" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Bitmap : Fill" id="1067766588" ypos="3" xpos="8">
+        <parameter animated="0" pathid="0" value0="8" animscale="0" animchan="1" name="Width" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="8" animscale="0" animchan="1" name="Height" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="tex_white" hidden="0" type="Misc : Store" id="1167532940" ypos="4" xpos="8"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Misc : Material" id="1335468484" ypos="3" xpos="16">
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Render pass" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Lighted" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Flat" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Two sided" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Z-Buffer" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Blending" name="Blending" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Blending on" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Blending source" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Blending dest." animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Blending op." animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Lighting" name="Lighting" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Diffuse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Specular" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.25" animscale="1" animchan="1" name="Shininess" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Refraction" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.1" animscale="1" animchan="1" name="Refr. intensity" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" animscale="0" animchan="1" name="Refraction on" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Diffuse map" name="Diffuse map" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Diff. filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Diff. addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="4903937" animscale="1" animchan="1" name="Diff. mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1167532940" animscale="0" animchan="1" name="Diff. texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Bump mapping" name="Bump mapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Bump filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Bump addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Bump mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Bump texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Parallax occlusion mapping" name="Parallax occlusion mapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="POM filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="POM addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="4903937" animscale="1" animchan="1" name="POM mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="POM texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Specular map" name="Specular map" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Spec. filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Spec. addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Spec. mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Spec. texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Environment map" name="Environment map" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Env. filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Env. addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Env. mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Env. texture" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="mat_white" hidden="0" type="Misc : Store" id="1371637148" ypos="4" xpos="16"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Mesh : Cube" id="1655070396" ypos="3" xpos="24">
+        <parameter animated="0" pathid="0" value0="1" value1="1" value2="1" animscale="0" animchan="1" name="Size" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
+      </operator>
+      <operator width="6" bypassed="0" username="" hidden="0" type="Mesh : Set material" id="1731710316" ypos="4" xpos="24">
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Apply on" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="mat_white" hidden="0" type="Misc : Load" id="1773795044" ypos="3" xpos="27">
+        <parameter animated="0" pathid="0" value0="1371637148" animscale="0" animchan="1" name="Load" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="msh_sphere" hidden="0" type="Misc : Store" id="2015412476" ypos="6" xpos="24"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Model : Model" id="213077381" ypos="7" xpos="24">
+        <parameter animated="0" pathid="0" value0="1555969" animscale="0" animchan="1" name="Throws shadow" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="mdl_sphere" hidden="0" type="Misc : Store" id="255162109" ypos="8" xpos="24"/>
+      <operator width="3" bypassed="0" username="mdl_sphere" hidden="0" type="Misc : Load" id="833457365" ypos="4" xpos="36">
+        <parameter animated="0" pathid="0" value0="255162109" animscale="0" animchan="1" name="Load" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="cam_cube" hidden="0" type="Misc : Store" id="1477770517" ypos="15" xpos="36"/>
+      <operator width="3" bypassed="0" username="cam_cube" hidden="0" type="Misc : Load" id="1636697509" ypos="3" xpos="50">
+        <parameter animated="0" pathid="0" value0="1477770517" animscale="0" animchan="1" name="Load" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Misc : Nop" id="150737382" ypos="11" xpos="36"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Misc : Nop" id="209898022" ypos="12" xpos="36"/>
+      <operator width="6" bypassed="0" username="" hidden="0" type="Effect : Merge" id="324588990" ypos="14" xpos="36">
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Blending" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" value1="1" animscale="0" animchan="1" name="Blend ratios" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Effect : Blur" id="354707134" ypos="12" xpos="39">
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Iterations" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" value1="1" animscale="0" animchan="1" name="Distance" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="2" animscale="0" animchan="1" name="Direction" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Effect : Downsample" id="510407182" ypos="11" xpos="39">
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Iterations" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.125" value1="0.125" animscale="0" animchan="1" name="Amount" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Effect : Adjust" id="880967918" ypos="13" xpos="39">
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Iterations" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.52" animscale="0" animchan="1" name="Brightness" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1.37" animscale="0" animchan="1" name="Contrast" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Color" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Subtract" animoffset="0"/>
+      </operator>
+      <operator width="6" bypassed="0" username="" hidden="0" type="Model : Merge" id="1769184254" ypos="5" xpos="36"/>
+      <operator width="3" bypassed="0" username="mdl_cube" hidden="0" type="Misc : Load" id="1820815358" ypos="3" xpos="39">
+        <parameter animated="0" pathid="0" value0="1942605711" animscale="0" animchan="1" name="Load" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Model : Transform" id="1851471326" ypos="4" xpos="39">
+        <parameter animated="0" pathid="0" value0="0" value1="-1.84" value2="0" animscale="0" animchan="1" name="Translate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Rotate" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" value1="1" value2="10" animscale="0" animchan="1" name="Scale" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" animscale="0" animchan="1" name="Reverse" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Effect : Adjust" id="2109271063" ypos="13" xpos="36">
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Iterations" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.72" animscale="0" animchan="1" name="Brightness" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Contrast" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Color" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Subtract" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Model : Light" id="1213395153" ypos="7" xpos="36">
+        <parameter animated="0" pathid="0" value0="-1.34" value1="1.22" value2="-2.48" animscale="0" animchan="1" name="Position" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" animscale="0" animchan="1" name="Range" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1058977874" value1="1061830001" value2="1065353216" animscale="0" animchan="1" name="Diffuse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Ambient" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Specular" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Shadows" name="Shadows" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Casts shadows" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="63" animscale="0" animchan="1" name="Shadowed faces" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="3.59" animscale="0" animchan="1" name="Penumbra size" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.001" animscale="1" animchan="1" name="Shadow bias" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Model : Light" id="774981722" ypos="8" xpos="36">
+        <parameter animated="0" pathid="0" value0="-1.53" value1="1.23" value2="1.59" animscale="0" animchan="1" name="Position" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="10" animscale="0" animchan="1" name="Range" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1039516303" value1="1056964608" value2="1046562734" animscale="0" animchan="1" name="Diffuse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Ambient" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" value1="0" value2="0" animscale="0" animchan="1" name="Specular" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Shadows" name="Shadows" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Casts shadows" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="63" animscale="0" animchan="1" name="Shadowed faces" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="3.59" animscale="0" animchan="1" name="Penumbra size" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.001" animscale="1" animchan="1" name="Shadow bias" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Mesh : Subdivide" id="2003909562" ypos="5" xpos="24">
+        <parameter animated="0" pathid="0" value0="2" animscale="0" animchan="1" name="Iterations" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Smoothness" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Bitmap : Fill" id="1282110468" ypos="12" xpos="8">
+        <parameter animated="0" pathid="0" value0="8" animscale="0" animchan="1" name="Width" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="8" animscale="0" animchan="1" name="Height" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" value3="1065353216" animchan="1" name="Color" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="tex_grey" hidden="0" type="Misc : Store" id="579721678" ypos="13" xpos="8"/>
+      <operator width="3" bypassed="0" username="mat_grey" hidden="0" type="Misc : Store" id="248935707" ypos="13" xpos="16"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Misc : Material" id="564283193" ypos="12" xpos="16">
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Render pass" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Lighted" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Flat" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Two sided" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Z-Buffer" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Blending" name="Blending" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Blending on" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Blending source" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Blending dest." animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Blending op." animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Lighting" name="Lighting" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Diffuse" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Specular" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.25" animscale="1" animchan="1" name="Shininess" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" value1="1065353216" value2="1065353216" animscale="0" animchan="1" name="Refraction" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0.1" animscale="1" animchan="1" name="Refr. intensity" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1065353216" animscale="0" animchan="1" name="Refraction on" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Diffuse map" name="Diffuse map" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Diff. filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Diff. addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="4903937" animscale="1" animchan="1" name="Diff. mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="579721678" animscale="0" animchan="1" name="Diff. texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Bump mapping" name="Bump mapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Bump filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Bump addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Bump mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Bump texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="1" animchan="1" value="Parallax occlusion mapping" name="Parallax occlusion mapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="1" animchan="1" name="POM filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="POM addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="4903937" animscale="1" animchan="1" name="POM mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="POM texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Specular map" name="Specular map" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Spec. filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Spec. addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Spec. mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Spec. texture" animoffset="0"/>
+        <parameter animated="0" pathid="0" animscale="0" animchan="1" value="Environment map" name="Environment map" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Env. filtering" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Env. addressing" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="1" animscale="0" animchan="1" name="Env. mipmapping" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Env. texture" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="mdl_cube" hidden="0" type="Misc : Store" id="1942605711" ypos="16" xpos="24"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Model : Model" id="1180299436" ypos="15" xpos="24">
+        <parameter animated="0" pathid="0" value0="1555969" animscale="0" animchan="1" name="Throws shadow" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="msh_cube" hidden="0" type="Misc : Store" id="986173513" ypos="14" xpos="24"/>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Mesh : Cube" id="339445445" ypos="12" xpos="24">
+        <parameter animated="0" pathid="0" value0="1" value1="1" value2="1" animscale="0" animchan="1" name="Size" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="1" animchan="1" name="Material" animoffset="0"/>
+      </operator>
+      <operator width="6" bypassed="0" username="" hidden="0" type="Mesh : Set material" id="1343027683" ypos="13" xpos="24">
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Apply on" animoffset="0"/>
+        <parameter animated="0" pathid="0" value0="0" animscale="0" animchan="1" name="Tag" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="mat_grey" hidden="0" type="Misc : Load" id="65654564" ypos="12" xpos="27">
+        <parameter animated="0" pathid="0" value0="248935707" animscale="0" animchan="1" name="Load" animoffset="0"/>
+      </operator>
+      <operator width="3" bypassed="0" username="" hidden="0" type="Misc : Scene" id="545006171" ypos="9" xpos="36"/>
+    </page>
+  </pages>
+  <pagetree>
+    <item expanded="0" pageid="1879698787" name="Start page"/>
+  </pagetree>
+  <songs>
+    <song bpm="125" id="2" name="New song">
+      <patterns>
+        <pattern rowcount="64" patternid="0" trackcount="4">
+          <tracks>
+            <track/>
+            <track/>
+            <track/>
+            <track/>
+          </tracks>
+        </pattern>
+      </patterns>
+      <patterninstances>
+        <patterninstance rowoffset="0" patternid="0" track="0"/>
+      </patterninstances>
+    </song>
+  </songs>
+  <songlist>
+    <song id="2" name="New song"/>
+  </songlist>
+  <instruments>
+    <instrument id="0" name="Fieser Bass">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.191919" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.0909091" name="OscP2Off"/>
+        <param value="0.010101" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.40404" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0" name="OscP3Int"/>
+        <param value="0.363636" name="OscP4Off"/>
+        <param value="0.171717" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.434343" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.434343" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="0.333333" name="OscPoly"/>
+        <param value="0.111111" name="OscUnisn"/>
+        <param value="0.808081" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.757576" name="OscOffset"/>
+        <param value="0.171717" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.375" name="AddOctave"/>
+        <param value="0.434343" name="AddBandw"/>
+        <param value="0.434343" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.474747" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.878788" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0" name="FltHPCut"/>
+        <param value="0.474747" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.434343" name="FltBPCut"/>
+        <param value="0.434343" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.444444" name="FltNTCut"/>
+        <param value="0.474747" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.616162" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.616162" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.959596" name="Env2Dec"/>
+        <param value="0.0909091" name="Env2Sus"/>
+        <param value="0.555556" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.434343" name="Lfo1Rate"/>
+        <param value="0.434343" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.434343" name="Lfo2Rate"/>
+        <param value="0.434343" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.1" name="Effect1"/>
+        <param value="0.2" name="Effect2"/>
+        <param value="0.5" name="Effect3"/>
+        <param value="0.3" name="Effect4"/>
+        <param value="0.7" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.464646" name="DistAmnt"/>
+        <param value="0.171717" name="ChrsRate"/>
+        <param value="0.171717" name="ChrsDep"/>
+        <param value="0.242424" name="DelayL"/>
+        <param value="0.272727" name="DelayR"/>
+        <param value="0.40404" name="DelayDc"/>
+        <param value="0.424242" name="RevRoom"/>
+        <param value="0.171717" name="RevDamp"/>
+        <param value="0.161616" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.131313" name="FlangLfo"/>
+        <param value="0.131313" name="FlangFreq"/>
+        <param value="0.131313" name="FlangAmp"/>
+        <param value="0.30303" name="FlangWet"/>
+        <param value="0.0606061" name="GainAmount"/>
+        <param value="0.848485" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0.454545" name="FrmtWet"/>
+        <param value="0.171717" name="EqLow"/>
+        <param value="0.191919" name="EqMid"/>
+        <param value="0.616162" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="1" name="Bass 4">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.252525" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.252525" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="0" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.181818" name="OscP4Val"/>
+        <param value="0" name="OscP4Int"/>
+        <param value="0" name="OscFiInt"/>
+        <param value="0.121212" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.454545" name="OscPan"/>
+        <param value="0" name="OscDetun"/>
+        <param value="0" name="OscPoly"/>
+        <param value="0.222222" name="OscUnisn"/>
+        <param value="0.434343" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.625" name="OscOctave"/>
+        <param value="0.737374" name="OscOffset"/>
+        <param value="0.0808081" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.454545" name="AddBandw"/>
+        <param value="0.454545" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.484848" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.434343" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0" name="FltHPCut"/>
+        <param value="0.747475" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.454545" name="FltBPCut"/>
+        <param value="0.454545" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.454545" name="FltNTCut"/>
+        <param value="0.484848" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="1" name="Env1Dec"/>
+        <param value="0.0909091" name="Env1Sus"/>
+        <param value="0.161616" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.787879" name="Env2Dec"/>
+        <param value="0.181818" name="Env2Sus"/>
+        <param value="0.888889" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.0606061" name="Lfo1Rate"/>
+        <param value="0.161616" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.454545" name="Lfo2Rate"/>
+        <param value="0.454545" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.111111" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0.444444" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0.64" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.1" name="Effect1"/>
+        <param value="0" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.0909091" name="DistAmnt"/>
+        <param value="0.181818" name="ChrsRate"/>
+        <param value="0.181818" name="ChrsDep"/>
+        <param value="0.151515" name="DelayL"/>
+        <param value="0.151515" name="DelayR"/>
+        <param value="0.151515" name="DelayDc"/>
+        <param value="0.151515" name="RevRoom"/>
+        <param value="0.151515" name="RevDamp"/>
+        <param value="0.454545" name="RevWet"/>
+        <param value="0.454545" name="RevWidth"/>
+        <param value="0.151515" name="FlangLfo"/>
+        <param value="0.151515" name="FlangFreq"/>
+        <param value="0.151515" name="FlangAmp"/>
+        <param value="0.454545" name="FlangWet"/>
+        <param value="0.343434" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="2" name="Pad, BP">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.212121" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.8" name="OscP4Off"/>
+        <param value="0.181818" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.252525" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.474747" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="0.133333" name="OscPoly"/>
+        <param value="0.222222" name="OscUnisn"/>
+        <param value="0.707071" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0.010101" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.375" name="OscOctave"/>
+        <param value="0.464646" name="OscOffset"/>
+        <param value="0.464646" name="OscSlop"/>
+        <param value="0.515152" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.25" name="AddOctave"/>
+        <param value="0.0606061" name="AddBandw"/>
+        <param value="0.838384" name="AddDamp"/>
+        <param value="0.858586" name="AddHarmncs"/>
+        <param value="0" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.484848" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.939394" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.474747" name="FltHPCut"/>
+        <param value="0.474747" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.959596" name="FltBPCut"/>
+        <param value="0.888889" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.464646" name="FltNTCut"/>
+        <param value="0.484848" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.414141" name="Env1Dec"/>
+        <param value="0.0909091" name="Env1Sus"/>
+        <param value="0.717172" name="Env1Rel"/>
+        <param value="0.323232" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.989899" name="Env2Dec"/>
+        <param value="0.0808081" name="Env2Sus"/>
+        <param value="0.747475" name="Env2Rel"/>
+        <param value="0.464646" name="Env2Slp"/>
+        <param value="0.474747" name="Lfo1Rate"/>
+        <param value="0.474747" name="Lfo1Dep"/>
+        <param value="0.5" name="Lfo1Shp"/>
+        <param value="1" name="Lfo1Sync"/>
+        <param value="0.474747" name="Lfo2Rate"/>
+        <param value="0.474747" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.53" name="Mm2Mod"/>
+        <param value="0.8" name="Mm2Target"/>
+        <param value="0.444444" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0.64" name="Mm3Target"/>
+        <param value="0.555556" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="1" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.3" name="Effect1"/>
+        <param value="0.7" name="Effect2"/>
+        <param value="0.2" name="Effect3"/>
+        <param value="0.5" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0" name="DistAmnt"/>
+        <param value="0.181818" name="ChrsRate"/>
+        <param value="0.181818" name="ChrsDep"/>
+        <param value="0.282828" name="DelayL"/>
+        <param value="0.262626" name="DelayR"/>
+        <param value="0.434343" name="DelayDc"/>
+        <param value="0.424242" name="RevRoom"/>
+        <param value="0.161616" name="RevDamp"/>
+        <param value="0.0909091" name="RevWet"/>
+        <param value="0.929293" name="RevWidth"/>
+        <param value="0.0606061" name="FlangLfo"/>
+        <param value="0.0606061" name="FlangFreq"/>
+        <param value="0.959596" name="FlangAmp"/>
+        <param value="0.191919" name="FlangWet"/>
+        <param value="0.353535" name="GainAmount"/>
+        <param value="0.434343" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0.161616" name="EqLow"/>
+        <param value="0.151515" name="EqMid"/>
+        <param value="0.59596" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="3" name="Basedrum">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.20202" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="1" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.161616" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.515152" name="OscVol"/>
+        <param value="0.676768" name="OscFreq"/>
+        <param value="0.464646" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="1" name="OscPoly"/>
+        <param value="0" name="OscUnisn"/>
+        <param value="0" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.454545" name="OscOffset"/>
+        <param value="0.454545" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.464646" name="AddBandw"/>
+        <param value="0.464646" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0.0909091" name="NoiseOn"/>
+        <param value="0.111111" name="NoiseFreq"/>
+        <param value="0.30303" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.515152" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="1" name="FltHPOn"/>
+        <param value="0" name="FltHPCut"/>
+        <param value="0.464646" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.464646" name="FltBPCut"/>
+        <param value="0.464646" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.474747" name="FltNTCut"/>
+        <param value="0.464646" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0" name="Env1Dec"/>
+        <param value="0.252525" name="Env1Sus"/>
+        <param value="0" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.0606061" name="Env2Dec"/>
+        <param value="0" name="Env2Sus"/>
+        <param value="0.151515" name="Env2Rel"/>
+        <param value="0.454545" name="Env2Slp"/>
+        <param value="0.464646" name="Lfo1Rate"/>
+        <param value="0.464646" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.464646" name="Lfo2Rate"/>
+        <param value="0.464646" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.4" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.36" name="Mm2Target"/>
+        <param value="0.444444" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0.6" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.1" name="Effect1"/>
+        <param value="0.5" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.191919" name="DistAmnt"/>
+        <param value="0.161616" name="ChrsRate"/>
+        <param value="0.161616" name="ChrsDep"/>
+        <param value="0.161616" name="DelayL"/>
+        <param value="0.161616" name="DelayR"/>
+        <param value="0.161616" name="DelayDc"/>
+        <param value="0.161616" name="RevRoom"/>
+        <param value="0.171717" name="RevDamp"/>
+        <param value="0.0606061" name="RevWet"/>
+        <param value="0.464646" name="RevWidth"/>
+        <param value="0.161616" name="FlangLfo"/>
+        <param value="0.161616" name="FlangFreq"/>
+        <param value="0.161616" name="FlangAmp"/>
+        <param value="0.464646" name="FlangWet"/>
+        <param value="0.343434" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0.0457415" name="FrmtType"/>
+        <param value="0.010101" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="4" name="Hihat Open">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.232323" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="1" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.8" name="OscP4Off"/>
+        <param value="0.191919" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.494949" name="OscPan"/>
+        <param value="0.1" name="OscDetun"/>
+        <param value="1" name="OscPoly"/>
+        <param value="0" name="OscUnisn"/>
+        <param value="0.383838" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.484848" name="OscOffset"/>
+        <param value="0.484848" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.484848" name="AddBandw"/>
+        <param value="0.484848" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.1" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0.10101" name="NoiseOn"/>
+        <param value="1" name="NoiseFreq"/>
+        <param value="0" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.565657" name="FltLPCut"/>
+        <param value="0.484848" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="1" name="FltHPCut"/>
+        <param value="0" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.484848" name="FltBPCut"/>
+        <param value="0.484848" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.484848" name="FltNTCut"/>
+        <param value="0.494949" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.181818" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0" name="Env1Rel"/>
+        <param value="0.010101" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.474747" name="Env2Dec"/>
+        <param value="0.474747" name="Env2Sus"/>
+        <param value="0.171717" name="Env2Rel"/>
+        <param value="0.474747" name="Env2Slp"/>
+        <param value="0.494949" name="Lfo1Rate"/>
+        <param value="0.494949" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.494949" name="Lfo2Rate"/>
+        <param value="0.494949" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.555" name="Mm1Mod"/>
+        <param value="0.6" name="Mm1Target"/>
+        <param value="0" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.5" name="Effect1"/>
+        <param value="0" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.181818" name="DistAmnt"/>
+        <param value="0.191919" name="ChrsRate"/>
+        <param value="0.191919" name="ChrsDep"/>
+        <param value="0.181818" name="DelayL"/>
+        <param value="0.181818" name="DelayR"/>
+        <param value="0.181818" name="DelayDc"/>
+        <param value="0.0909091" name="RevRoom"/>
+        <param value="0.838384" name="RevDamp"/>
+        <param value="0.222222" name="RevWet"/>
+        <param value="0.474747" name="RevWidth"/>
+        <param value="0.181818" name="FlangLfo"/>
+        <param value="0.181818" name="FlangFreq"/>
+        <param value="0.181818" name="FlangAmp"/>
+        <param value="0.494949" name="FlangWet"/>
+        <param value="0.585859" name="GainAmount"/>
+        <param value="0.0808081" name="ChrsGain"/>
+        <param value="0.0889572" name="FrmtType"/>
+        <param value="0.0808081" name="FrmtWet"/>
+        <param value="0.0808081" name="EqLow"/>
+        <param value="0.0808081" name="EqMid"/>
+        <param value="0.0808081" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="5" name="Bass">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.69697" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0.5" name="OscP1Int"/>
+        <param value="0" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="0.5" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0.5" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.171717" name="OscP4Val"/>
+        <param value="0.5" name="OscP4Int"/>
+        <param value="0.5" name="OscFiInt"/>
+        <param value="0.464646" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.474747" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="1" name="OscPoly"/>
+        <param value="0.222222" name="OscUnisn"/>
+        <param value="0.59596" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.625" name="OscOctave"/>
+        <param value="0.363636" name="OscOffset"/>
+        <param value="0.0909091" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.464646" name="AddBandw"/>
+        <param value="0.464646" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.484848" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.525253" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.474747" name="FltHPCut"/>
+        <param value="0.484848" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.464646" name="FltBPCut"/>
+        <param value="0.464646" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.464646" name="FltNTCut"/>
+        <param value="0.474747" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.464646" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.616162" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.0909091" name="Env2Dec"/>
+        <param value="0.373737" name="Env2Sus"/>
+        <param value="0.616162" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.474747" name="Lfo1Rate"/>
+        <param value="0.474747" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.474747" name="Lfo2Rate"/>
+        <param value="0.474747" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.3" name="Effect1"/>
+        <param value="0.2" name="Effect2"/>
+        <param value="0.7" name="Effect3"/>
+        <param value="0.5" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.171717" name="DistAmnt"/>
+        <param value="0.171717" name="ChrsRate"/>
+        <param value="0.171717" name="ChrsDep"/>
+        <param value="0.282828" name="DelayL"/>
+        <param value="0.282828" name="DelayR"/>
+        <param value="0.646465" name="DelayDc"/>
+        <param value="0.717172" name="RevRoom"/>
+        <param value="0.161616" name="RevDamp"/>
+        <param value="0.191919" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.161616" name="FlangLfo"/>
+        <param value="0.161616" name="FlangFreq"/>
+        <param value="0.161616" name="FlangAmp"/>
+        <param value="0.474747" name="FlangWet"/>
+        <param value="0.232323" name="GainAmount"/>
+        <param value="0.373737" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0.454545" name="EqLow"/>
+        <param value="0.191919" name="EqMid"/>
+        <param value="0.666667" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="6" name="Bing">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.252525" name="OscP1Off"/>
+        <param value="0.30303" name="OscP1Val"/>
+        <param value="0.5" name="OscP1Int"/>
+        <param value="0.313131" name="OscP2Off"/>
+        <param value="0.969697" name="OscP2Val"/>
+        <param value="0.5" name="OscP2Int"/>
+        <param value="0" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0" name="OscP3Int"/>
+        <param value="0.575758" name="OscP4Off"/>
+        <param value="0.676768" name="OscP4Val"/>
+        <param value="0.5" name="OscP4Int"/>
+        <param value="0" name="OscFiInt"/>
+        <param value="0" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.444444" name="OscPan"/>
+        <param value="0.0606061" name="OscDetun"/>
+        <param value="0.466667" name="OscPoly"/>
+        <param value="0.222222" name="OscUnisn"/>
+        <param value="0.434343" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.464646" name="OscOffset"/>
+        <param value="0.141414" name="OscSlop"/>
+        <param value="0.0909091" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.375" name="AddOctave"/>
+        <param value="0.0909091" name="AddBandw"/>
+        <param value="0.444444" name="AddDamp"/>
+        <param value="0.787879" name="AddHarmncs"/>
+        <param value="0" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.474747" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.808081" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.555556" name="FltHPCut"/>
+        <param value="0.474747" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.787879" name="FltBPCut"/>
+        <param value="0.151515" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.313131" name="FltNTCut"/>
+        <param value="0.484848" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.10101" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.727273" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.606061" name="Env2Dec"/>
+        <param value="0.0606061" name="Env2Sus"/>
+        <param value="0.737374" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.0909091" name="Lfo1Rate"/>
+        <param value="0.444444" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.0909091" name="Lfo2Rate"/>
+        <param value="0.0909091" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.8" name="Mm2Target"/>
+        <param value="0.111111" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0.8" name="Mm3Target"/>
+        <param value="0.444444" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0.222222" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0.444444" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0.64" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.2" name="Effect1"/>
+        <param value="0" name="Effect2"/>
+        <param value="0.5" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.141414" name="DistAmnt"/>
+        <param value="0.181818" name="ChrsRate"/>
+        <param value="0.181818" name="ChrsDep"/>
+        <param value="0.272727" name="DelayL"/>
+        <param value="0.272727" name="DelayR"/>
+        <param value="0.333333" name="DelayDc"/>
+        <param value="0.787879" name="RevRoom"/>
+        <param value="0.141414" name="RevDamp"/>
+        <param value="0.282828" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.0606061" name="FlangLfo"/>
+        <param value="0" name="FlangFreq"/>
+        <param value="0" name="FlangAmp"/>
+        <param value="0.0909091" name="FlangWet"/>
+        <param value="0.626263" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="7" name="Lead">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.969697" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0.5" name="OscP1Int"/>
+        <param value="1" name="OscP2Off"/>
+        <param value="0.282828" name="OscP2Val"/>
+        <param value="0.5" name="OscP2Int"/>
+        <param value="0.414141" name="OscP3Off"/>
+        <param value="0.959596" name="OscP3Val"/>
+        <param value="0.5" name="OscP3Int"/>
+        <param value="0.414141" name="OscP4Off"/>
+        <param value="0" name="OscP4Val"/>
+        <param value="0" name="OscP4Int"/>
+        <param value="0" name="OscFiInt"/>
+        <param value="0.0606061" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.474747" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="0.2" name="OscPoly"/>
+        <param value="0.111111" name="OscUnisn"/>
+        <param value="0.767677" name="OscSpread"/>
+        <param value="0.333333" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.625" name="OscOctave"/>
+        <param value="0.212121" name="OscOffset"/>
+        <param value="0.464646" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.161616" name="AddBandw"/>
+        <param value="0.464646" name="AddDamp"/>
+        <param value="0.525253" name="AddHarmncs"/>
+        <param value="0.212121" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.0909091" name="NoiseFreq"/>
+        <param value="0.0909091" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.989899" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0" name="FltHPCut"/>
+        <param value="0.161616" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="1" name="FltBPCut"/>
+        <param value="1" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.464646" name="FltNTCut"/>
+        <param value="0.474747" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.909091" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.686869" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.313131" name="Env2Dec"/>
+        <param value="0" name="Env2Sus"/>
+        <param value="0.757576" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.464646" name="Lfo1Rate"/>
+        <param value="0.464646" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.474747" name="Lfo2Rate"/>
+        <param value="0.474747" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.2" name="Effect1"/>
+        <param value="0.5" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.353535" name="DistAmnt"/>
+        <param value="0.171717" name="ChrsRate"/>
+        <param value="0.171717" name="ChrsDep"/>
+        <param value="0.222222" name="DelayL"/>
+        <param value="0.222222" name="DelayR"/>
+        <param value="0.666667" name="DelayDc"/>
+        <param value="0.717172" name="RevRoom"/>
+        <param value="0.79798" name="RevDamp"/>
+        <param value="0.454545" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0" name="FlangLfo"/>
+        <param value="0.0606061" name="FlangFreq"/>
+        <param value="0" name="FlangAmp"/>
+        <param value="0.747475" name="FlangWet"/>
+        <param value="0.515152" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="8" name="Snare 2">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.212121" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="1" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.161616" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.121212" name="OscVol"/>
+        <param value="0.737374" name="OscFreq"/>
+        <param value="0.494949" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="1" name="OscPoly"/>
+        <param value="0" name="OscUnisn"/>
+        <param value="0.363636" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.464646" name="OscOffset"/>
+        <param value="0.464646" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.464646" name="AddBandw"/>
+        <param value="0.464646" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0.121212" name="NoiseOn"/>
+        <param value="0.414141" name="NoiseFreq"/>
+        <param value="0.10101" name="NoiseBw"/>
+        <param value="0" name="FltLPOn"/>
+        <param value="0.464646" name="FltLPCut"/>
+        <param value="0.464646" name="FltLPRes"/>
+        <param value="1" name="FltHPOn"/>
+        <param value="0.0909091" name="FltHPCut"/>
+        <param value="0.484848" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.464646" name="FltBPCut"/>
+        <param value="0.464646" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.474747" name="FltNTCut"/>
+        <param value="0.484848" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.0909091" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.0606061" name="Env2Dec"/>
+        <param value="0" name="Env2Sus"/>
+        <param value="0" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.474747" name="Lfo1Rate"/>
+        <param value="0.474747" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.484848" name="Lfo2Rate"/>
+        <param value="0.484848" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.6" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.4" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.1" name="Effect1"/>
+        <param value="0.5" name="Effect2"/>
+        <param value="0.7" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.212121" name="DistAmnt"/>
+        <param value="0.181818" name="ChrsRate"/>
+        <param value="0.181818" name="ChrsDep"/>
+        <param value="0.161616" name="DelayL"/>
+        <param value="0.161616" name="DelayR"/>
+        <param value="0.171717" name="DelayDc"/>
+        <param value="0.292929" name="RevRoom"/>
+        <param value="0.161616" name="RevDamp"/>
+        <param value="0.525253" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.171717" name="FlangLfo"/>
+        <param value="0.171717" name="FlangFreq"/>
+        <param value="0.171717" name="FlangAmp"/>
+        <param value="0.484848" name="FlangWet"/>
+        <param value="0.434343" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0.414141" name="EqLow"/>
+        <param value="0.636364" name="EqMid"/>
+        <param value="0.666667" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="9" name="Strings">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.585859" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.131313" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.131313" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.484848" name="OscPan"/>
+        <param value="0.1" name="OscDetun"/>
+        <param value="0.333333" name="OscPoly"/>
+        <param value="0.333333" name="OscUnisn"/>
+        <param value="0.454545" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.646465" name="OscOffset"/>
+        <param value="0.20202" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.191919" name="AddBandw"/>
+        <param value="0.707071" name="AddDamp"/>
+        <param value="0.353535" name="AddHarmncs"/>
+        <param value="0" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.494949" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.929293" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.474747" name="FltHPCut"/>
+        <param value="0.494949" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.787879" name="FltBPCut"/>
+        <param value="0.0808081" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.464646" name="FltNTCut"/>
+        <param value="0.494949" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.0606061" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.0808081" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.0909091" name="Env2Dec"/>
+        <param value="0.121212" name="Env2Sus"/>
+        <param value="0" name="Env2Rel"/>
+        <param value="0.464646" name="Env2Slp"/>
+        <param value="0" name="Lfo1Rate"/>
+        <param value="0.555556" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="1" name="Lfo1Sync"/>
+        <param value="0.474747" name="Lfo2Rate"/>
+        <param value="0.474747" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.111111" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.2" name="Effect1"/>
+        <param value="0.5" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.171717" name="DistAmnt"/>
+        <param value="0.191919" name="ChrsRate"/>
+        <param value="0.191919" name="ChrsDep"/>
+        <param value="0.232323" name="DelayL"/>
+        <param value="0.222222" name="DelayR"/>
+        <param value="0.151515" name="DelayDc"/>
+        <param value="0.151515" name="RevRoom"/>
+        <param value="0.777778" name="RevDamp"/>
+        <param value="0.131313" name="RevWet"/>
+        <param value="0.989899" name="RevWidth"/>
+        <param value="0.161616" name="FlangLfo"/>
+        <param value="0.161616" name="FlangFreq"/>
+        <param value="0.161616" name="FlangAmp"/>
+        <param value="0.474747" name="FlangWet"/>
+        <param value="0.454545" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="10" name="String, Short">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.0606061" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.636364" name="OscP2Off"/>
+        <param value="0.0606061" name="OscP2Val"/>
+        <param value="0.5" name="OscP2Int"/>
+        <param value="0.787879" name="OscP3Off"/>
+        <param value="0.979798" name="OscP3Val"/>
+        <param value="0.5" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.161616" name="OscP4Val"/>
+        <param value="0.5" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.0909091" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.474747" name="OscPan"/>
+        <param value="0.1" name="OscDetun"/>
+        <param value="0.0666667" name="OscPoly"/>
+        <param value="0.222222" name="OscUnisn"/>
+        <param value="0.787879" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.323232" name="OscOffset"/>
+        <param value="0" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.375" name="AddOctave"/>
+        <param value="0.0909091" name="AddBandw"/>
+        <param value="0.929293" name="AddDamp"/>
+        <param value="0.0606061" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.484848" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.979798" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.464646" name="FltHPCut"/>
+        <param value="0.484848" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.535354" name="FltBPCut"/>
+        <param value="0" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.424242" name="FltNTCut"/>
+        <param value="0.484848" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.10101" name="Env1Dec"/>
+        <param value="0.272727" name="Env1Sus"/>
+        <param value="0.767677" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.212121" name="Env2Dec"/>
+        <param value="0.0909091" name="Env2Sus"/>
+        <param value="0.757576" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.464646" name="Lfo1Rate"/>
+        <param value="0.464646" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.464646" name="Lfo2Rate"/>
+        <param value="0.464646" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0" name="Effect1"/>
+        <param value="0.2" name="Effect2"/>
+        <param value="0.5" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.161616" name="DistAmnt"/>
+        <param value="0.181818" name="ChrsRate"/>
+        <param value="0.181818" name="ChrsDep"/>
+        <param value="0.242424" name="DelayL"/>
+        <param value="0.242424" name="DelayR"/>
+        <param value="0.545455" name="DelayDc"/>
+        <param value="0.333333" name="RevRoom"/>
+        <param value="0.828283" name="RevDamp"/>
+        <param value="0.353535" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.0606061" name="FlangLfo"/>
+        <param value="0.0808081" name="FlangFreq"/>
+        <param value="0.959596" name="FlangAmp"/>
+        <param value="0.464646" name="FlangWet"/>
+        <param value="0.40404" name="GainAmount"/>
+        <param value="1" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="1" name="FrmtWet"/>
+        <param value="0.464646" name="EqLow"/>
+        <param value="0.464646" name="EqMid"/>
+        <param value="0.464646" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="11" name="Asdf">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.0909091" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="1" name="OscP1Int"/>
+        <param value="0.515152" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.343434" name="OscP3Off"/>
+        <param value="0.89899" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.808081" name="OscP4Off"/>
+        <param value="0.151515" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.474747" name="OscPan"/>
+        <param value="0.1" name="OscDetun"/>
+        <param value="0.333333" name="OscPoly"/>
+        <param value="0.111111" name="OscUnisn"/>
+        <param value="0.808081" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.454545" name="OscOffset"/>
+        <param value="0.181818" name="OscSlop"/>
+        <param value="0.0909091" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.375" name="AddOctave"/>
+        <param value="0.10101" name="AddBandw"/>
+        <param value="0.959596" name="AddDamp"/>
+        <param value="0.787879" name="AddHarmncs"/>
+        <param value="0" name="AddScale"/>
+        <param value="0.010101" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.484848" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.979798" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.373737" name="FltHPCut"/>
+        <param value="0.484848" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0" name="FltBPCut"/>
+        <param value="0.131313" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.454545" name="FltNTCut"/>
+        <param value="0.484848" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.0909091" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.0909091" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.20202" name="Env2Dec"/>
+        <param value="0.131313" name="Env2Sus"/>
+        <param value="0.787879" name="Env2Rel"/>
+        <param value="0.454545" name="Env2Slp"/>
+        <param value="0.0606061" name="Lfo1Rate"/>
+        <param value="0.121212" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0" name="Lfo2Rate"/>
+        <param value="0.373737" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.444444" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.333333" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0.111111" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0.64" name="Mm3Target"/>
+        <param value="0.222222" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0.8" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.2" name="Effect1"/>
+        <param value="0.5" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.121212" name="DistAmnt"/>
+        <param value="0.181818" name="ChrsRate"/>
+        <param value="0.181818" name="ChrsDep"/>
+        <param value="0.262626" name="DelayL"/>
+        <param value="0.242424" name="DelayR"/>
+        <param value="0.414141" name="DelayDc"/>
+        <param value="0.848485" name="RevRoom"/>
+        <param value="0.151515" name="RevDamp"/>
+        <param value="0.40404" name="RevWet"/>
+        <param value="0.454545" name="RevWidth"/>
+        <param value="0.151515" name="FlangLfo"/>
+        <param value="0.151515" name="FlangFreq"/>
+        <param value="0.151515" name="FlangAmp"/>
+        <param value="0.424242" name="FlangWet"/>
+        <param value="0.414141" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="12" name="Fieser Bass">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.181818" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.0909091" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.393939" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0" name="OscP3Int"/>
+        <param value="0.353535" name="OscP4Off"/>
+        <param value="0.161616" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.424242" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.424242" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="0.333333" name="OscPoly"/>
+        <param value="0.111111" name="OscUnisn"/>
+        <param value="0.808081" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.757576" name="OscOffset"/>
+        <param value="0.161616" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.375" name="AddOctave"/>
+        <param value="0.424242" name="AddBandw"/>
+        <param value="0.424242" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.464646" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.878788" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0" name="FltHPCut"/>
+        <param value="0.464646" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.424242" name="FltBPCut"/>
+        <param value="0.424242" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.434343" name="FltNTCut"/>
+        <param value="0.464646" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.616162" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.616162" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.959596" name="Env2Dec"/>
+        <param value="0.0909091" name="Env2Sus"/>
+        <param value="0.555556" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.424242" name="Lfo1Rate"/>
+        <param value="0.424242" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.424242" name="Lfo2Rate"/>
+        <param value="0.424242" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.1" name="Effect1"/>
+        <param value="0.2" name="Effect2"/>
+        <param value="0.5" name="Effect3"/>
+        <param value="0.3" name="Effect4"/>
+        <param value="0.7" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.393939" name="DistAmnt"/>
+        <param value="0.161616" name="ChrsRate"/>
+        <param value="0.161616" name="ChrsDep"/>
+        <param value="0.232323" name="DelayL"/>
+        <param value="0.252525" name="DelayR"/>
+        <param value="0.393939" name="DelayDc"/>
+        <param value="0.414141" name="RevRoom"/>
+        <param value="0.151515" name="RevDamp"/>
+        <param value="0.151515" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.121212" name="FlangLfo"/>
+        <param value="0.121212" name="FlangFreq"/>
+        <param value="0.121212" name="FlangAmp"/>
+        <param value="0.292929" name="FlangWet"/>
+        <param value="0.0606061" name="GainAmount"/>
+        <param value="0.848485" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0.444444" name="FrmtWet"/>
+        <param value="0.161616" name="EqLow"/>
+        <param value="0.181818" name="EqMid"/>
+        <param value="0.616162" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="13" name="Bass">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.171717" name="OscP1Off"/>
+        <param value="0" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="1" name="OscP2Val"/>
+        <param value="0" name="OscP2Int"/>
+        <param value="0" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0" name="OscP3Int"/>
+        <param value="0" name="OscP4Off"/>
+        <param value="0" name="OscP4Val"/>
+        <param value="0.5" name="OscP4Int"/>
+        <param value="0" name="OscFiInt"/>
+        <param value="0.454545" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.464646" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="1" name="OscPoly"/>
+        <param value="0.111111" name="OscUnisn"/>
+        <param value="0.40404" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.75" name="OscOctave"/>
+        <param value="0.656566" name="OscOffset"/>
+        <param value="0.444444" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.454545" name="AddBandw"/>
+        <param value="0.454545" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.484848" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.515152" name="FltLPCut"/>
+        <param value="0.363636" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.454545" name="FltHPCut"/>
+        <param value="0.484848" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.454545" name="FltBPCut"/>
+        <param value="0.454545" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.454545" name="FltNTCut"/>
+        <param value="0.484848" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.949495" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0.272727" name="Env1Rel"/>
+        <param value="0.444444" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.939394" name="Env2Dec"/>
+        <param value="0.131313" name="Env2Sus"/>
+        <param value="0.858586" name="Env2Rel"/>
+        <param value="0.444444" name="Env2Slp"/>
+        <param value="0.454545" name="Lfo1Rate"/>
+        <param value="0.454545" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.454545" name="Lfo2Rate"/>
+        <param value="0.454545" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0" name="Mm2Target"/>
+        <param value="0.555556" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="1" name="Mm3Target"/>
+        <param value="0.444444" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0.64" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.2" name="Effect1"/>
+        <param value="0.7" name="Effect2"/>
+        <param value="0.1" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.151515" name="DistAmnt"/>
+        <param value="0.181818" name="ChrsRate"/>
+        <param value="0.181818" name="ChrsDep"/>
+        <param value="0.242424" name="DelayL"/>
+        <param value="0.252525" name="DelayR"/>
+        <param value="0.383838" name="DelayDc"/>
+        <param value="0.131313" name="RevRoom"/>
+        <param value="0.171717" name="RevDamp"/>
+        <param value="0.131313" name="RevWet"/>
+        <param value="0.444444" name="RevWidth"/>
+        <param value="0.151515" name="FlangLfo"/>
+        <param value="0.151515" name="FlangFreq"/>
+        <param value="0.151515" name="FlangAmp"/>
+        <param value="0.454545" name="FlangWet"/>
+        <param value="0.343434" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0.191919" name="EqLow"/>
+        <param value="0.222222" name="EqMid"/>
+        <param value="0.616162" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="14" name="Fieser Bass">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.212121" name="OscP1Off"/>
+        <param value="0.636364" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0.40404" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.171717" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.464646" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.484848" name="OscPan"/>
+        <param value="0.1" name="OscDetun"/>
+        <param value="1" name="OscPoly"/>
+        <param value="0.111111" name="OscUnisn"/>
+        <param value="0.707071" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.625" name="OscOctave"/>
+        <param value="0.464646" name="OscOffset"/>
+        <param value="0.464646" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.464646" name="AddBandw"/>
+        <param value="0.464646" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.474747" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="0" name="FltLPOn"/>
+        <param value="0.464646" name="FltLPCut"/>
+        <param value="0.464646" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.474747" name="FltHPCut"/>
+        <param value="0.474747" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.464646" name="FltBPCut"/>
+        <param value="0.464646" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.464646" name="FltNTCut"/>
+        <param value="0.474747" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.222222" name="Env1Dec"/>
+        <param value="0.454545" name="Env1Sus"/>
+        <param value="0.464646" name="Env1Rel"/>
+        <param value="0.464646" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.464646" name="Env2Dec"/>
+        <param value="0.464646" name="Env2Sus"/>
+        <param value="0.161616" name="Env2Rel"/>
+        <param value="0.464646" name="Env2Slp"/>
+        <param value="0.474747" name="Lfo1Rate"/>
+        <param value="0.474747" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.474747" name="Lfo2Rate"/>
+        <param value="0.474747" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0" name="Effect1"/>
+        <param value="0" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.171717" name="DistAmnt"/>
+        <param value="0.171717" name="ChrsRate"/>
+        <param value="0.171717" name="ChrsDep"/>
+        <param value="0.161616" name="DelayL"/>
+        <param value="0.161616" name="DelayR"/>
+        <param value="0.161616" name="DelayDc"/>
+        <param value="0.161616" name="RevRoom"/>
+        <param value="0.161616" name="RevDamp"/>
+        <param value="0.464646" name="RevWet"/>
+        <param value="0.464646" name="RevWidth"/>
+        <param value="0.161616" name="FlangLfo"/>
+        <param value="0.161616" name="FlangFreq"/>
+        <param value="0.161616" name="FlangAmp"/>
+        <param value="0.474747" name="FlangWet"/>
+        <param value="0.363636" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="15" name="Snare 2">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.181818" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="1" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="1" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.131313" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.0909091" name="OscVol"/>
+        <param value="0.828283" name="OscFreq"/>
+        <param value="0.444444" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="1" name="OscPoly"/>
+        <param value="0" name="OscUnisn"/>
+        <param value="0.323232" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.434343" name="OscOffset"/>
+        <param value="0.434343" name="OscSlop"/>
+        <param value="0" name="AddVolume"/>
+        <param value="0" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.434343" name="AddBandw"/>
+        <param value="0.434343" name="AddDamp"/>
+        <param value="0.0909091" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0.414141" name="NoiseOn"/>
+        <param value="0.414141" name="NoiseFreq"/>
+        <param value="0.0606061" name="NoiseBw"/>
+        <param value="0" name="FltLPOn"/>
+        <param value="0.424242" name="FltLPCut"/>
+        <param value="0.424242" name="FltLPRes"/>
+        <param value="1" name="FltHPOn"/>
+        <param value="0.0909091" name="FltHPCut"/>
+        <param value="0.444444" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.434343" name="FltBPCut"/>
+        <param value="0.434343" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.434343" name="FltNTCut"/>
+        <param value="0.444444" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0" name="Env1Rel"/>
+        <param value="0.545455" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.0606061" name="Env2Dec"/>
+        <param value="0" name="Env2Sus"/>
+        <param value="0" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.444444" name="Lfo1Rate"/>
+        <param value="0.444444" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.444444" name="Lfo2Rate"/>
+        <param value="0.444444" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.6" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.4" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.1" name="Effect1"/>
+        <param value="0.5" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.222222" name="DistAmnt"/>
+        <param value="0.131313" name="ChrsRate"/>
+        <param value="0.131313" name="ChrsDep"/>
+        <param value="0.121212" name="DelayL"/>
+        <param value="0.121212" name="DelayR"/>
+        <param value="0.121212" name="DelayDc"/>
+        <param value="0.131313" name="RevRoom"/>
+        <param value="0.121212" name="RevDamp"/>
+        <param value="0.373737" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.131313" name="FlangLfo"/>
+        <param value="0.131313" name="FlangFreq"/>
+        <param value="0.131313" name="FlangAmp"/>
+        <param value="0.444444" name="FlangWet"/>
+        <param value="0.323232" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="16" name="Pad">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.666667" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0" name="OscP1Int"/>
+        <param value="0.515152" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="0" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.141414" name="OscP4Val"/>
+        <param value="0" name="OscP4Int"/>
+        <param value="0" name="OscFiInt"/>
+        <param value="0" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.464646" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="0.733333" name="OscPoly"/>
+        <param value="0.111111" name="OscUnisn"/>
+        <param value="0.808081" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.444444" name="OscOffset"/>
+        <param value="0.181818" name="OscSlop"/>
+        <param value="0.212121" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.375" name="AddOctave"/>
+        <param value="0.161616" name="AddBandw"/>
+        <param value="0.545455" name="AddDamp"/>
+        <param value="0.79798" name="AddHarmncs"/>
+        <param value="0" name="AddScale"/>
+        <param value="0.0909091" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.474747" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.969697" name="FltLPCut"/>
+        <param value="0.232323" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.373737" name="FltHPCut"/>
+        <param value="0.464646" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.585859" name="FltBPCut"/>
+        <param value="0.141414" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.454545" name="FltNTCut"/>
+        <param value="0.464646" name="FltNTQ"/>
+        <param value="0.333333" name="Env1Att"/>
+        <param value="0.737374" name="Env1Dec"/>
+        <param value="0.0909091" name="Env1Sus"/>
+        <param value="0.676768" name="Env1Rel"/>
+        <param value="0.444444" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.969697" name="Env2Dec"/>
+        <param value="0" name="Env2Sus"/>
+        <param value="0.444444" name="Env2Rel"/>
+        <param value="0.444444" name="Env2Slp"/>
+        <param value="0.0909091" name="Lfo1Rate"/>
+        <param value="0.232323" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.0909091" name="Lfo2Rate"/>
+        <param value="0.171717" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.444444" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.333333" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.64" name="Mm2Target"/>
+        <param value="0.111111" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0.64" name="Mm3Target"/>
+        <param value="0.222222" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0.8" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.3" name="Effect1"/>
+        <param value="0.5" name="Effect2"/>
+        <param value="0.2" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.292929" name="DistAmnt"/>
+        <param value="0.161616" name="ChrsRate"/>
+        <param value="0.161616" name="ChrsDep"/>
+        <param value="0.252525" name="DelayL"/>
+        <param value="0.262626" name="DelayR"/>
+        <param value="0.535354" name="DelayDc"/>
+        <param value="0.79798" name="RevRoom"/>
+        <param value="0.151515" name="RevDamp"/>
+        <param value="0.414141" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.141414" name="FlangLfo"/>
+        <param value="0.141414" name="FlangFreq"/>
+        <param value="0.141414" name="FlangAmp"/>
+        <param value="0.424242" name="FlangWet"/>
+        <param value="0.191919" name="GainAmount"/>
+        <param value="0.444444" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0.40404" name="FrmtWet"/>
+        <param value="0.424242" name="EqLow"/>
+        <param value="0.515152" name="EqMid"/>
+        <param value="0.444444" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="17" name="Bass, Short">
+      <parameters>
+        <param value="0.333333" name="OscPoints"/>
+        <param value="0.20202" name="OscP1Off"/>
+        <param value="1" name="OscP1Val"/>
+        <param value="0.5" name="OscP1Int"/>
+        <param value="0.656566" name="OscP2Off"/>
+        <param value="0" name="OscP2Val"/>
+        <param value="0" name="OscP2Int"/>
+        <param value="0.59596" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="1" name="OscP3Int"/>
+        <param value="0.79798" name="OscP4Off"/>
+        <param value="0.151515" name="OscP4Val"/>
+        <param value="1" name="OscP4Int"/>
+        <param value="1" name="OscFiInt"/>
+        <param value="0.0909091" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.454545" name="OscPan"/>
+        <param value="0.0909091" name="OscDetun"/>
+        <param value="0" name="OscPoly"/>
+        <param value="0.444444" name="OscUnisn"/>
+        <param value="0.525253" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.75" name="OscOctave"/>
+        <param value="0.454545" name="OscOffset"/>
+        <param value="0.454545" name="OscSlop"/>
+        <param value="0.383838" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.5" name="AddOctave"/>
+        <param value="0.10101" name="AddBandw"/>
+        <param value="0.464646" name="AddDamp"/>
+        <param value="0.767677" name="AddHarmncs"/>
+        <param value="0.0909091" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.464646" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="0" name="FltLPOn"/>
+        <param value="0.454545" name="FltLPCut"/>
+        <param value="0.454545" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.10101" name="FltHPCut"/>
+        <param value="0.454545" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.464646" name="FltBPCut"/>
+        <param value="0.464646" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.464646" name="FltNTCut"/>
+        <param value="0.474747" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="1" name="Env1Dec"/>
+        <param value="0" name="Env1Sus"/>
+        <param value="0" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.454545" name="Env2Dec"/>
+        <param value="0.454545" name="Env2Sus"/>
+        <param value="0.151515" name="Env2Rel"/>
+        <param value="0.454545" name="Env2Slp"/>
+        <param value="0.454545" name="Lfo1Rate"/>
+        <param value="0.454545" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.454545" name="Lfo2Rate"/>
+        <param value="0.454545" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0" name="Mm2Target"/>
+        <param value="0" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0" name="Mm3Target"/>
+        <param value="0" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0" name="Mm6Target"/>
+        <param value="0" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0" name="Effect1"/>
+        <param value="0" name="Effect2"/>
+        <param value="0" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.151515" name="DistAmnt"/>
+        <param value="0.171717" name="ChrsRate"/>
+        <param value="0.171717" name="ChrsDep"/>
+        <param value="0.151515" name="DelayL"/>
+        <param value="0.151515" name="DelayR"/>
+        <param value="0.151515" name="DelayDc"/>
+        <param value="0.151515" name="RevRoom"/>
+        <param value="0.161616" name="RevDamp"/>
+        <param value="0.454545" name="RevWet"/>
+        <param value="0.454545" name="RevWidth"/>
+        <param value="0.0909091" name="FlangLfo"/>
+        <param value="0.0909091" name="FlangFreq"/>
+        <param value="0.0909091" name="FlangAmp"/>
+        <param value="0.616162" name="FlangWet"/>
+        <param value="0.222222" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+    <instrument id="18" name="Bing">
+      <parameters>
+        <param value="1" name="OscPoints"/>
+        <param value="0.242424" name="OscP1Off"/>
+        <param value="0.30303" name="OscP1Val"/>
+        <param value="0.5" name="OscP1Int"/>
+        <param value="0.313131" name="OscP2Off"/>
+        <param value="0.969697" name="OscP2Val"/>
+        <param value="0.5" name="OscP2Int"/>
+        <param value="0" name="OscP3Off"/>
+        <param value="0" name="OscP3Val"/>
+        <param value="0" name="OscP3Int"/>
+        <param value="0.575758" name="OscP4Off"/>
+        <param value="0.676768" name="OscP4Val"/>
+        <param value="0.5" name="OscP4Int"/>
+        <param value="0" name="OscFiInt"/>
+        <param value="0" name="OscVol"/>
+        <param value="0" name="OscFreq"/>
+        <param value="0.444444" name="OscPan"/>
+        <param value="0.0606061" name="OscDetun"/>
+        <param value="0.466667" name="OscPoly"/>
+        <param value="0.222222" name="OscUnisn"/>
+        <param value="0.424242" name="OscSpread"/>
+        <param value="0" name="OscSubOsc"/>
+        <param value="0" name="OscGlide"/>
+        <param value="0" name="OscDrive"/>
+        <param value="0.5" name="OscOctave"/>
+        <param value="0.464646" name="OscOffset"/>
+        <param value="0.141414" name="OscSlop"/>
+        <param value="0.0909091" name="AddVolume"/>
+        <param value="1" name="AddProfile"/>
+        <param value="0.375" name="AddOctave"/>
+        <param value="0.0909091" name="AddBandw"/>
+        <param value="0.444444" name="AddDamp"/>
+        <param value="0.787879" name="AddHarmncs"/>
+        <param value="0" name="AddScale"/>
+        <param value="0" name="AddDrive"/>
+        <param value="0" name="NoiseOn"/>
+        <param value="0.474747" name="NoiseFreq"/>
+        <param value="1" name="NoiseBw"/>
+        <param value="1" name="FltLPOn"/>
+        <param value="0.878788" name="FltLPCut"/>
+        <param value="0" name="FltLPRes"/>
+        <param value="0" name="FltHPOn"/>
+        <param value="0.787879" name="FltHPCut"/>
+        <param value="0.464646" name="FltHPRes"/>
+        <param value="0" name="FltBPOn"/>
+        <param value="0.787879" name="FltBPCut"/>
+        <param value="0.141414" name="FltBPQ"/>
+        <param value="0" name="FltNTOn"/>
+        <param value="0.313131" name="FltNTCut"/>
+        <param value="0.494949" name="FltNTQ"/>
+        <param value="0" name="Env1Att"/>
+        <param value="0.0707071" name="Env1Dec"/>
+        <param value="0.0505051" name="Env1Sus"/>
+        <param value="0.727273" name="Env1Rel"/>
+        <param value="1" name="Env1Slp"/>
+        <param value="0" name="Env2Att"/>
+        <param value="0.606061" name="Env2Dec"/>
+        <param value="0.0808081" name="Env2Sus"/>
+        <param value="0.737374" name="Env2Rel"/>
+        <param value="1" name="Env2Slp"/>
+        <param value="0.0909091" name="Lfo1Rate"/>
+        <param value="0.434343" name="Lfo1Dep"/>
+        <param value="0" name="Lfo1Shp"/>
+        <param value="0" name="Lfo1Sync"/>
+        <param value="0.0909091" name="Lfo2Rate"/>
+        <param value="0.0909091" name="Lfo2Dep"/>
+        <param value="0" name="Lfo2Shp"/>
+        <param value="0" name="Lfo2Sync"/>
+        <param value="0.333333" name="Mm1Source"/>
+        <param value="0.55" name="Mm1Mod"/>
+        <param value="0.36" name="Mm1Target"/>
+        <param value="0.444444" name="Mm2Source"/>
+        <param value="0.55" name="Mm2Mod"/>
+        <param value="0.8" name="Mm2Target"/>
+        <param value="0.111111" name="Mm3Source"/>
+        <param value="0.55" name="Mm3Mod"/>
+        <param value="0.8" name="Mm3Target"/>
+        <param value="0.444444" name="Mm4Source"/>
+        <param value="0.55" name="Mm4Mod"/>
+        <param value="0" name="Mm4Target"/>
+        <param value="0.222222" name="Mm5Source"/>
+        <param value="0.55" name="Mm5Mod"/>
+        <param value="0" name="Mm5Target"/>
+        <param value="0.444444" name="Mm6Source"/>
+        <param value="0.55" name="Mm6Mod"/>
+        <param value="0.64" name="Mm6Target"/>
+        <param value="0.555556" name="Mm7Source"/>
+        <param value="0.55" name="Mm7Mod"/>
+        <param value="0.72" name="Mm7Target"/>
+        <param value="0" name="Mm8Source"/>
+        <param value="0.55" name="Mm8Mod"/>
+        <param value="0" name="Mm8Target"/>
+        <param value="0" name="Mm9Source"/>
+        <param value="0.55" name="Mm9Mod"/>
+        <param value="0" name="Mm9Target"/>
+        <param value="0" name="Mm10Sourc"/>
+        <param value="0.55" name="Mm10Mod"/>
+        <param value="0" name="Mm10Targe"/>
+        <param value="0.2" name="Effect1"/>
+        <param value="0" name="Effect2"/>
+        <param value="0.5" name="Effect3"/>
+        <param value="0" name="Effect4"/>
+        <param value="0" name="Effect5"/>
+        <param value="0" name="Effect6"/>
+        <param value="0" name="Effect7"/>
+        <param value="0" name="Effect8"/>
+        <param value="0" name="Effect9"/>
+        <param value="0" name="Effect10"/>
+        <param value="0.141414" name="DistAmnt"/>
+        <param value="0.191919" name="ChrsRate"/>
+        <param value="0.191919" name="ChrsDep"/>
+        <param value="0.262626" name="DelayL"/>
+        <param value="0.262626" name="DelayR"/>
+        <param value="0.333333" name="DelayDc"/>
+        <param value="0.787879" name="RevRoom"/>
+        <param value="0.141414" name="RevDamp"/>
+        <param value="0.272727" name="RevWet"/>
+        <param value="1" name="RevWidth"/>
+        <param value="0.0606061" name="FlangLfo"/>
+        <param value="0" name="FlangFreq"/>
+        <param value="0" name="FlangAmp"/>
+        <param value="0.0909091" name="FlangWet"/>
+        <param value="0.585859" name="GainAmount"/>
+        <param value="0" name="ChrsGain"/>
+        <param value="0" name="FrmtType"/>
+        <param value="0" name="FrmtWet"/>
+        <param value="0" name="EqLow"/>
+        <param value="0" name="EqMid"/>
+        <param value="0" name="EqHigh"/>
+      </parameters>
+    </instrument>
+  </instruments>
+</enigma>

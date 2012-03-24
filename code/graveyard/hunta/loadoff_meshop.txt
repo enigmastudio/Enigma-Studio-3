@@ -1,0 +1,93 @@
+// Load *.off file (mesh) operator
+// -------------------------------
+// Loads in a mesh in the .off file format.
+
+#if defined(HAVE_OP_MESH_LOAD_OFF) || defined(eEDITOR) 
+eOPERATOR_DECLARE(eLoadOffOp, eIMeshOp, eIMeshOp::MESH_LOADOFFOP, "Load off", 0, 0, ' ')
+{
+    eOP_PARAM_ADD_FILE("Path", "");
+}
+eOPERATOR_DECLARE_END();
+
+eOPERATOR_IMPL_BEGIN(eLoadOffOp)
+{
+    /*
+    const eChar *fileName = getParameter(0).getValue().string;
+
+    FILE *F = fopen(fileName,"rt");
+    if(F != 0)
+    {
+        char name[100];
+        fscanf(F,"%s\n",name);
+        eBool hasNormals = (strcmp(name, "NOFF") == 0);
+        eU32 vert,facecnt,edges;
+        fscanf_s(F,"%i %i %i\n",&vert,&facecnt,&edges);
+        float xmin,ymin,zmin,xmax,ymax,zmax;
+        m_mesh.reserveSpace(vert,facecnt * 3,facecnt);
+        for(eU32 i = 0; i < vert; i++)
+        {
+            float x,y,z,nx=0,ny=0,nz=0; // keep datatype FLOAT !!
+            if(hasNormals)
+                fscanf_s(F,"%f %f %f %f %f %f\n",&x,&y,&z,&nx,&ny,&nz);
+            else
+                fscanf_s(F,"%f %f %f\n",&x,&y,&z);
+            if(i == 0)        { xmin = x; xmax =x; }
+            if(x < xmin)    xmin = x;
+            if(x > xmax)    xmax = x;
+            if(i == 0)        { ymin = y; ymax =y; }
+            if(y < ymin)    ymin = y;
+            if(y > ymax)    ymax = y;
+            if(i == 0)        { zmin = z; zmax =z; }
+            if(z < zmin)    zmin = z;
+            if(z > zmax)    zmax = z;
+            eVector3 p(x,y,z);
+            eVector3 norm(0,0,0);
+            if(hasNormals)
+            {
+                float nlen = eSqrt(nx*nx + ny*ny + nz*nz);
+                nx /= nlen;
+                ny /= nlen;
+                nz /= nlen;
+                norm.x = -nx;
+                norm.y = -ny;
+                norm.z = -nz;
+            };
+
+            // Add vertices to mesh.
+            m_mesh.addVertex(p, norm, eVector2::ORIGIN);
+        };
+
+        for(eU32 i = 0; i < facecnt; i++)
+        {
+            int numVert,i1,i2,i3;
+            fscanf_s(F,"%d %d %d %d\n",&numVert,&i1,&i2,&i3);
+            int e = m_mesh.addEdge(i1, i2);
+            m_mesh.addEdge(i2, i3);
+            m_mesh.addEdge(i3, i1);
+            m_mesh.addTriangle(e, e + 1, e + 2);
+        };
+        
+        float scale = xmax - xmin;
+        if(ymax - ymin > scale) scale = ymax - ymin;
+        if(zmax - zmin > scale) scale = zmax - zmin;
+        float damp = 0.8f;
+        float offx = 1.0f * (1.0f - damp) * 0.5f;
+        float offy = 1.0f * (1.0f - damp) * 0.5f;
+        float offz = 1.0f * (1.0f - damp) * 0.5f;
+        for(eU32 i = 0; i < m_mesh.getVertexCount(); i++)
+        {
+            eEditMesh::Vertex& v = m_mesh.getVertex(i);
+            v.position.x = ((v.position.x - xmin) / scale) * damp + offx;
+            v.position.y = ((v.position.y - ymin) / scale) * damp + offy;
+            v.position.z = ((v.position.z - zmin) / scale) * damp + offz;
+        };
+
+        fclose(F);
+
+        m_mesh.updateNormals();
+        m_mesh.getBoundingBox().setCenterExtents(eVector3::ORIGIN, eVector3(2.0f, 2.0f, 2.0f));
+    }
+    */
+}
+eOPERATOR_IMPL_END();
+#endif

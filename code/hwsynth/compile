@@ -1,0 +1,2 @@
+#!/bin/sh
+g++ display.cpp midi.cpp hwsynth.cpp alsa.cpp ../eshared/synth/*.cpp ../eshared/system/*.cpp -DeHWSYNTH -DTF3_VSTI -o hwsynth -lasound -lSDL -lSDL_ttf -lSDL_gfx -std=c++0x -O2 -ffast-math -mfloat-abi=softfp -mfpu=neon

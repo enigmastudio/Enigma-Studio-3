@@ -1,0 +1,2 @@
+#!/bin/sh
+g++ benchmark.cpp -o benchmark -D__ARM_NEON__ -O2 -ffast-math -mcpu=cortex-a8 -mfloat-abi=softfp -mfpu=neon

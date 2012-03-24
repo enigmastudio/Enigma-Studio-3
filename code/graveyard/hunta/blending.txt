@@ -1,0 +1,8 @@
+vordefinierte blend modes
+
+mode		src		dst		op
+
+add		one		one		add
+sub		one		one		sub
+alpha		src alpha	inv src alpha	add
+mul		dst color	zero		add

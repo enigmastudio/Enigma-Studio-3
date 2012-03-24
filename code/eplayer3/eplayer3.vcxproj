@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Static|Win32">
+      <Configuration>Debug Static</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Static|Win32">
+      <Configuration>Release Static</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|Win32">
+      <Configuration>Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FFDB460B-F1B4-49C1-8C3A-83FC9D2A226B}</ProjectGuid>
+    <RootNamespace>eplayer3</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\fxc.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\binary\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">..\..\binary\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">..\..\binary\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\binary\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">..\..\binary\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">false</GenerateManifest>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(ProjectName)_d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">$(ProjectName)_d</TargetName>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Utilities\Bin\x86;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(DXSDK_DIR)\Utilities\Bin\x86;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">$(DXSDK_DIR)\Utilities\Bin\x86;$(ExecutablePath)</ExecutablePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Include;$(QTDIR)\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(DXSDK_DIR)\Include;$(QTDIR)\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">$(DXSDK_DIR)\Include;$(QTDIR)\include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)\Utilities\Bin\x86;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">$(DXSDK_DIR)\Utilities\Bin\x86;$(ExecutablePath)</ExecutablePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)\Include;$(QTDIR)\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">$(DXSDK_DIR)\Include;$(QTDIR)\include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;eDEBUG;ePLAYER;eUSE_MMX;eUSE_SSE;eHAVE_ALL_OPS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;winmm.lib;d3d9.lib;d3dx9.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;ePLAYER;eDEBUG;eUSE_MMX;eUSE_SSE;eHAVE_ALL_OPS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;winmm.lib;d3d9.lib;d3dx9.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName).exe</OutputFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Static|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;eDEBUG;ePLAYER;eUSE_MMX;eUSE_SSE;eHAVE_ALL_OPS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;winmm.lib;d3d9.lib;d3dx9.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;eRELEASE;ePLAYER;eUSE_MMX;eUSE_SSE;eINTRO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <BrowseInformation>true</BrowseInformation>
+      <CallingConvention>StdCall</CallingConvention>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <StringPooling>true</StringPooling>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;d3d9.lib;d3dx9.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName).exe</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <SetChecksum>true</SetChecksum>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>false</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Static|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;eRELEASE;ePLAYER;eUSE_MMX;eUSE_SSE;eINTRO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <BrowseInformation>true</BrowseInformation>
+      <CallingConvention>StdCall</CallingConvention>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <StringPooling>false</StringPooling>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;d3d9.lib;d3dx9.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName).exe</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <SetChecksum>true</SetChecksum>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\eshared\engine\kdtree.hpp" />
+    <ClInclude Include="..\eshared\engine\light.hpp" />
+    <ClInclude Include="..\eshared\engine\scene.hpp" />
+    <ClInclude Include="..\eshared\engine\scenedata.hpp" />
+    <ClInclude Include="..\eshared\engine\shaders\shaders.hpp" />
+    <ClInclude Include="..\eshared\engine\stablefluids.hpp" />
+    <ClInclude Include="..\eshared\engine\tshader\tshader.hpp" />
+    <ClInclude Include="..\eshared\modules\lsystem\lsystem.hpp" />
+    <ClInclude Include="..\eshared\opstacking\demodata.hpp" />
+    <ClInclude Include="..\eshared\opstacking\effectops.hpp" />
+    <ClInclude Include="..\eshared\opstacking\opinput.hpp" />
+    <ClInclude Include="..\eshared\synth\directx\tf_soundoutdx8.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_addsynth.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_adsr.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_filter.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_functions.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_ieffect.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_instrument.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_isoundout.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_lfo.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_modmatrix.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_noise.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_oscillator.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_player.hpp" />
+    <ClInclude Include="..\eshared\synth\tf_song.hpp" />
+    <ClInclude Include="..\eshared\synth\tunefish3.hpp" />
+    <ClInclude Include="..\eshared\system\datastream.hpp" />
+    <ClInclude Include="..\eshared\system\file.hpp" />
+    <ClInclude Include="..\eshared\system\hashmap.hpp" />
+    <ClInclude Include="..\eshared\system\point.hpp" />
+    <ClInclude Include="..\eshared\system\profiler.hpp" />
+    <ClInclude Include="..\eshared\system\rect.hpp" />
+    <ClInclude Include="..\eshared\system\string.hpp" />
+    <ClInclude Include="..\eshared\system\threading.hpp" />
+    <ClInclude Include="..\eshared\eshared.hpp" />
+    <ClInclude Include="..\eshared\system\array.hpp" />
+    <ClInclude Include="..\eshared\system\color.hpp" />
+    <ClInclude Include="..\eshared\system\factory.hpp" />
+    <ClInclude Include="..\eshared\system\list.hpp" />
+    <ClInclude Include="..\eshared\system\runtime.hpp" />
+    <ClInclude Include="..\eshared\system\singleton.hpp" />
+    <ClInclude Include="..\eshared\system\system.hpp" />
+    <ClInclude Include="..\eshared\system\timer.hpp" />
+    <ClInclude Include="..\eshared\system\types.hpp" />
+    <ClInclude Include="..\eshared\math\math.hpp" />
+    <ClInclude Include="..\eshared\math\matrix4x4.hpp" />
+    <ClInclude Include="..\eshared\math\plane.hpp" />
+    <ClInclude Include="..\eshared\math\quat.hpp" />
+    <ClInclude Include="..\eshared\math\vector2.hpp" />
+    <ClInclude Include="..\eshared\math\vector3.hpp" />
+    <ClInclude Include="..\eshared\math\vector4.hpp" />
+    <ClInclude Include="..\eshared\engine\camera.hpp" />
+    <ClInclude Include="..\eshared\engine\deferredrenderer.hpp" />
+    <ClInclude Include="..\eshared\engine\editmesh.hpp" />
+    <ClInclude Include="..\eshared\engine\effect.hpp" />
+    <ClInclude Include="..\eshared\engine\engine.hpp" />
+    <ClInclude Include="..\eshared\engine\geometry.hpp" />
+    <ClInclude Include="..\eshared\engine\irenderer.hpp" />
+    <ClInclude Include="..\eshared\engine\iresource.hpp" />
+    <ClInclude Include="..\eshared\engine\material.hpp" />
+    <ClInclude Include="..\eshared\engine\mesh.hpp" />
+    <ClInclude Include="..\eshared\engine\particlesys.hpp" />
+    <ClInclude Include="..\eshared\engine\path.hpp" />
+    <ClInclude Include="..\eshared\engine\renderjob.hpp" />
+    <ClInclude Include="..\eshared\engine\resourcemgr.hpp" />
+    <ClInclude Include="..\eshared\engine\sequencer.hpp" />
+    <ClInclude Include="..\eshared\engine\shadermgr.hpp" />
+    <ClInclude Include="..\eshared\engine\statemgr.hpp" />
+    <ClInclude Include="..\eshared\engine\vertex.hpp" />
+    <ClInclude Include="..\eshared\engine\directx\buffersdx9.hpp" />
+    <ClInclude Include="..\eshared\engine\directx\graphicsapidx9.hpp" />
+    <ClInclude Include="..\eshared\engine\directx\shadersdx9.hpp" />
+    <ClInclude Include="..\eshared\engine\directx\texturesdx9.hpp" />
+    <ClInclude Include="..\eshared\opstacking\bitmapops.hpp" />
+    <ClInclude Include="..\eshared\opstacking\demo.hpp" />
+    <ClInclude Include="..\eshared\opstacking\demoscript.hpp" />
+    <ClInclude Include="..\eshared\opstacking\ioperator.hpp" />
+    <ClInclude Include="..\eshared\opstacking\meshops.hpp" />
+    <ClInclude Include="..\eshared\opstacking\miscops.hpp" />
+    <ClInclude Include="..\eshared\opstacking\modelops.hpp" />
+    <ClInclude Include="..\eshared\opstacking\opmacros.hpp" />
+    <ClInclude Include="..\eshared\opstacking\oppage.hpp" />
+    <ClInclude Include="..\eshared\opstacking\opstacking.hpp" />
+    <ClInclude Include="..\eshared\opstacking\parameter.hpp" />
+    <ClInclude Include="..\eshared\opstacking\pathops.hpp" />
+    <ClInclude Include="..\eshared\opstacking\sequencerops.hpp" />
+    <ClInclude Include="..\configinfo.hpp" />
+    <ClInclude Include="production.hpp" />
+    <ClInclude Include="setupdlg.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\eshared\engine\engine.cpp" />
+    <ClCompile Include="..\eshared\engine\kdtree.cpp" />
+    <ClCompile Include="..\eshared\engine\light.cpp" />
+    <ClCompile Include="..\eshared\engine\scene.cpp" />
+    <ClCompile Include="..\eshared\engine\scenedata.cpp" />
+    <ClCompile Include="..\eshared\engine\tshader\tshader.cpp" />
+    <ClCompile Include="..\eshared\math\aabb.cpp" />
+    <ClCompile Include="..\eshared\math\vector4.cpp" />
+    <ClCompile Include="..\eshared\modules\lsystem\lsystem.cpp" />
+    <ClCompile Include="..\eshared\opstacking\demo.cpp" />
+    <ClCompile Include="..\eshared\opstacking\demodata.cpp" />
+    <ClCompile Include="..\eshared\opstacking\demoscript.cpp" />
+    <ClCompile Include="..\eshared\opstacking\ioperator.cpp" />
+    <ClCompile Include="..\eshared\opstacking\opinput.cpp" />
+    <ClCompile Include="..\eshared\opstacking\parameter.cpp" />
+    <ClCompile Include="..\eshared\synth\directx\tf_soundoutdx8.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_addsynth.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_adsr.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_filter.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_functions.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_ieffect.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_instrument.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_lfo.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_modmatrix.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_noise.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_oscillator.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_player.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_song.cpp" />
+    <ClCompile Include="..\eshared\system\array.cpp" />
+    <ClCompile Include="..\eshared\system\color.cpp" />
+    <ClCompile Include="..\eshared\system\datastream.cpp" />
+    <ClCompile Include="..\eshared\system\file.cpp" />
+    <ClCompile Include="..\eshared\system\hashmap.cpp" />
+    <ClCompile Include="..\eshared\system\profiler.cpp" />
+    <ClCompile Include="..\eshared\system\runtime.cpp" />
+    <ClCompile Include="..\eshared\system\string.cpp" />
+    <ClCompile Include="..\eshared\system\threading.cpp" />
+    <ClCompile Include="..\eshared\system\timer.cpp" />
+    <ClCompile Include="..\eshared\math\matrix4x4.cpp" />
+    <ClCompile Include="..\eshared\math\quat.cpp" />
+    <ClCompile Include="..\eshared\math\vector2.cpp" />
+    <ClCompile Include="..\eshared\math\vector3.cpp" />
+    <ClCompile Include="..\eshared\engine\camera.cpp" />
+    <ClCompile Include="..\eshared\engine\deferredrenderer.cpp" />
+    <ClCompile Include="..\eshared\engine\editmesh.cpp" />
+    <ClCompile Include="..\eshared\engine\effect.cpp" />
+    <ClCompile Include="..\eshared\engine\geometry.cpp" />
+    <ClCompile Include="..\eshared\engine\irenderer.cpp" />
+    <ClCompile Include="..\eshared\engine\iresource.cpp" />
+    <ClCompile Include="..\eshared\engine\material.cpp" />
+    <ClCompile Include="..\eshared\engine\mesh.cpp" />
+    <ClCompile Include="..\eshared\engine\particlesys.cpp" />
+    <ClCompile Include="..\eshared\engine\path.cpp" />
+    <ClCompile Include="..\eshared\engine\renderjob.cpp" />
+    <ClCompile Include="..\eshared\engine\resourcemgr.cpp" />
+    <ClCompile Include="..\eshared\engine\sequencer.cpp" />
+    <ClCompile Include="..\eshared\engine\shadermgr.cpp" />
+    <ClCompile Include="..\eshared\engine\statemgr.cpp" />
+    <ClCompile Include="..\eshared\engine\directx\buffersdx9.cpp" />
+    <ClCompile Include="..\eshared\engine\directx\graphicsapidx9.cpp" />
+    <ClCompile Include="..\eshared\engine\directx\shadersdx9.cpp" />
+    <ClCompile Include="..\eshared\engine\directx\texturesdx9.cpp" />
+    <ClCompile Include="eplayer3.cpp" />
+    <ClCompile Include="production.cpp" />
+    <ClCompile Include="setupdlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\deferred_ambient.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\deferred_env.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\deferred_geo.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\deferred_light.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\distance.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\forward_light.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_adjust.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_blur.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_colorgrading.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_distort.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_dof.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_fog.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_fxaa.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_merge.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_radialblur.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_ripple.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\fx_ssao.ps" />
+    <None Include="..\eshared\engine\shaders\globals.ps">
+      <FileType>Document</FileType>
+    </None>
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\nolight.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\particles.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\quad.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\refraction.ps" />
+    <Pixel_shader_compiler Include="..\eshared\engine\shaders\shadow.ps" />
+    <None Include="..\eshared\engine\shaders\utils.ps">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Vertex_shader_compiler Include="..\eshared\engine\shaders\distance.vs" />
+    <None Include="..\eshared\engine\shaders\globals.vs">
+      <FileType>Document</FileType>
+    </None>
+    <Vertex_shader_compiler Include="..\eshared\engine\shaders\instanced_geo.vs" />
+    <Vertex_shader_compiler Include="..\eshared\engine\shaders\nolight.vs" />
+    <Vertex_shader_compiler Include="..\eshared\engine\shaders\particles.vs" />
+    <Vertex_shader_compiler Include="..\eshared\engine\shaders\quad.vs" />
+    <Vertex_shader_compiler Include="..\eshared\engine\shaders\shadow.vs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\fxc.targets" />
+  </ImportGroup>
+</Project>

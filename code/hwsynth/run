@@ -1,0 +1,2 @@
+#!/bin/sh
+./hwsynth /dev/midi1 default ../../binary/tf3programs/program40.txt

@@ -1,0 +1,67 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "utils.ps"
+
+sampler s_posG:		register(s2);
+sampler s_normalG:	register(s3);
+sampler s_noiseMap: register(s4);
+float4  c_params:   register(c0); // scale, intensity, bias, radius
+
+// Calculates ambient occlusion based on angle and distance.
+float ambientOcclusion(const float2 texCoord, const float3 pos, const float3 normal)
+{
+    const float scale = c_params.x;
+    const float bias = c_params.z;
+
+    const float3 diff = tex2D(s_posG, texCoord).xyz-pos;
+    const float diffLen = length(diff);
+    const float dist = diffLen*scale;
+
+    return max(0.0f, dot(normal, diff/diffLen)-bias)/(1.0f+dist);
+}
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR
+{
+    const float2 vec[4] =
+    {
+        float2(1.0f, 0.0f), float2(-1.0f,  0.0f),
+        float2(0.0f, 1.0f), float2( 0.0f, -1.0f)
+    };
+
+    const float3 pos = tex2D(s_posG, texCoord).xyz;
+    const float3 normal = tex2D(s_normalG, texCoord).xyz;
+    const float2 rnd = tex2D(s_noiseMap, texCoord).xy;
+    const float  rad = c_params.w/pos.z;
+
+    const float intensity = c_params.y;
+
+    float ao = 0.0f;
+
+    for (int i=0; i<4; i++)
+	{
+        // First coordiante is reflected and
+        // the second rotated by 45 degrees.
+        const float2 coord0 = reflect(vec[i], rnd)*rad;
+        const float2 coord1 = float2(coord0.x-coord0.y, coord0.x+coord0.y)*0.707f;
+
+        // Evaluate ambient occlusion for pixels.
+        ao += ambientOcclusion(texCoord+0.25*coord0, pos, normal);
+        ao += ambientOcclusion(texCoord+0.50*coord1, pos, normal);
+        ao += ambientOcclusion(texCoord+0.75*coord0, pos, normal);
+        ao += ambientOcclusion(texCoord+1.00*coord1, pos, normal);
+    }
+
+    ao *= intensity;
+    return 1.0f-float4(ao, ao, ao, 0.0f);
+}

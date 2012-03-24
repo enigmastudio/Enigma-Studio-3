@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup
+    Condition="'$(Qt_User_Interface_CompilerBeforeTargets)' == '' and '$(Qt_User_Interface_CompilerAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <Qt_User_Interface_CompilerBeforeTargets>Midl</Qt_User_Interface_CompilerBeforeTargets>
+    <Qt_User_Interface_CompilerAfterTargets>CustomBuild</Qt_User_Interface_CompilerAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Qt_User_Interface_CompilerDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(Qt_User_Interface_CompilerDependsOn)</Qt_User_Interface_CompilerDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Qt_User_Interface_Compiler>
+      <CommandLineTemplate>"$(QTDIR)\bin\uic.exe" "%(FullPath)" -o "%(RootDir)%(Directory)ui_%(Filename).hpp"</CommandLineTemplate>
+      <Outputs>%(RootDir)%(Directory)ui_%(Filename).hpp</Outputs>
+      <ExecutionDescription>Creating UI include file "ui_%(Filename).hpp"</ExecutionDescription>
+    </Qt_User_Interface_Compiler>
+  </ItemDefinitionGroup>
+  <PropertyGroup
+    Condition="'$(Qt_Resource_CompilerBeforeTargets)' == '' and '$(Qt_Resource_CompilerAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <Qt_Resource_CompilerBeforeTargets>Midl</Qt_Resource_CompilerBeforeTargets>
+    <Qt_Resource_CompilerAfterTargets>CustomBuild</Qt_Resource_CompilerAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Qt_Resource_CompilerDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(Qt_Resource_CompilerDependsOn)</Qt_Resource_CompilerDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Qt_Resource_Compiler>
+      <CommandLineTemplate>"$(QTDIR)\bin\rcc.exe" "%(FullPath)" -o "%(RootDir)%(Directory)qrc_%(Filename).cpp"</CommandLineTemplate>
+      <Outputs>%(RootDir)%(Directory)qrc_%(Filename).cpp</Outputs>
+      <ExecutionDescription>Creating QRC Source File "qrc_%(Filename).cpp"</ExecutionDescription>
+    </Qt_Resource_Compiler>
+  </ItemDefinitionGroup>
+</Project>

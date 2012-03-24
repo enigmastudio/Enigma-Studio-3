@@ -1,0 +1,42 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+sampler s_target: register(s0);
+float4  c_params: register(c0); // distance, strength, origin
+
+float4 main(const float2 texCoord: TEXCOORD0) : COLOR
+{
+    const float samples[8] =
+    {
+        -0.05, -0.03, -0.02, -0.01, 0.01, 0.02, 0.03, 0.05
+    };
+
+    const float maxDist = c_params.x;
+    const float strength = c_params.y;
+    const float2 origin = float2(c_params.z, c_params.w);
+
+    float2 dir = origin-texCoord;
+    const float dist = length(dir);
+    dir = dir/dist*maxDist;
+
+    const float4 color = tex2D(s_target, texCoord);
+    float4 sum = color;
+
+    for (int i=0; i<8; i++)
+    {
+        sum += tex2D(s_target, texCoord+dir*samples[i]);
+    }
+	
+    sum *= (1.0f/11.0f);
+    return lerp(color, sum, saturate(dist*strength));
+}

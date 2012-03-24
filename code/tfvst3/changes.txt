@@ -1,0 +1,10 @@
+
+
+Plans:
+
+- Phase/Frequency/Ring modulation
+- Phaser effect
+- Comb effect
+- LFO delay
+- Modmatrix faktoren prüfen
+

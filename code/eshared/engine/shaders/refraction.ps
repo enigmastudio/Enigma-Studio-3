@@ -1,0 +1,33 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "globals.ps"
+#include "utils.ps"
+
+sampler s_normalG:	register(s1);
+sampler s_target:   register(s7);
+
+struct v2f
+{
+    float2 texCoord:    TEXCOORD0;	// texture coordinate
+    float4 clipPos:     TEXCOORD3;	// position (clip space)
+};
+
+float4 main(const v2f input) : COLOR
+{
+	const float3 normal = tex2D(s_normalG, input.texCoord).xyz;
+	const float2 lookup = postProjectionToScreenSpace(input.clipPos)-normal.xy*c_matRefractionIntens;
+    const float4 color = tex2D(s_target, lookup);
+	
+	return color*float4(c_matRefractionCol, 1.0f);
+}

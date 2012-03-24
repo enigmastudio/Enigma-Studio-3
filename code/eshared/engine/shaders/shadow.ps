@@ -1,0 +1,43 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include "globals.ps"
+
+samplerCUBE s_indirMap:			register(s0);
+sampler2D   s_distMap:			register(s1);
+
+float4 main(const float3 lightVec: TEXCOORD0) : COLOR 
+{
+	const float2 off	= 1.0f/c_shadowMapSize;
+    const float2 uv		= texCUBE(s_indirMap, lightVec).xy;
+	const float3 absLv	= abs(lightVec);
+    const float ma		= max(max(absLv.x, absLv.y), absLv.z);
+    const float depth	= (-1.0f/ma)*c_camProjShadowZ.x+c_camProjShadowZ.y-c_lightShadowBias;
+
+    float4 tap0, tap1;
+
+    tap0.x = tex2Dproj(s_distMap, float4(uv+float2( off.x,  off.y), depth, 1.0f)).x;
+    tap0.y = tex2Dproj(s_distMap, float4(uv+float2(-off.x,  off.y), depth, 1.0f)).x;
+    tap0.z = tex2Dproj(s_distMap, float4(uv+float2( off.x, -off.y), depth, 1.0f)).x;
+    tap0.w = tex2Dproj(s_distMap, float4(uv+float2(-off.x, -off.y), depth, 1.0f)).x;
+
+	tap1.x = tex2Dproj(s_distMap, float4(uv+float2( off.x,  0    ), depth, 1.0f)).x;
+	tap1.y = tex2Dproj(s_distMap, float4(uv+float2(-off.x,  0    ), depth, 1.0f)).x;
+	tap1.z = tex2Dproj(s_distMap, float4(uv+float2( 0,     -off.y), depth, 1.0f)).x;
+	tap1.w = tex2Dproj(s_distMap, float4(uv+float2( 0,     -off.y), depth, 1.0f)).x;
+ 
+	const float tapCenter = tex2Dproj(s_distMap, float4(uv, depth, 1)).x;
+	const float occlusion = dot(tap0+tap1+float4(tapCenter, 0.0f, 0.0f, 0.0f), 1.0f/9.0f);
+
+	return float4(1.0f-occlusion, 0.0f, 0.0f, 1.0f);
+}

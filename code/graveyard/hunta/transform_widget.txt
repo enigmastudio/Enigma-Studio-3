@@ -1,0 +1,84 @@
+// Transform (mesh) operator
+// -------------------------
+// Transforms (scale, rotate, translate) the
+// vertices of the input operator. Which vertices
+// are transformed depends on the selection parameter.
+
+class eTransformWidget
+{
+public:
+    void moveByMouse(const ePoint &mousePos, const eSize &vpSize) const
+    {
+    }
+
+    void renderArrow(const eVector3 &pos, const eVector3 &rot, const eVector3 &rot2, const eVector3 &scale, const eColor &color, eIGraphicsApi *gfx) const
+    {
+        const eVector3 arrowPos[] =
+        {
+            eVector3(0.0f, 0.0f, 10.0f),
+
+            eVector3(-1.0f, -1.0f, 8.5f),
+            eVector3( 1.0f, -1.0f, 8.5f),
+            eVector3( 1.0f,  1.0f, 8.5f),
+            eVector3(-1.0f,  1.0f, 8.5f),
+
+            eVector3(-0.35f, -0.35f, 8.5f), // 5
+            eVector3( 0.35f, -0.35f, 8.5f), // 6
+            eVector3( 0.35f,  0.35f, 8.5f), // 7
+            eVector3(-0.35f,  0.35f, 8.5f), // 8
+
+            eVector3(-0.35f, -0.35f, 0.35f),
+            eVector3( 0.35f, -0.35f, 0.35f),
+            eVector3( 0.35f,  0.35f, 0.35f),
+            eVector3(-0.35f,  0.35f, 0.35f),
+        };
+
+        const eU32 indices[] =
+        {
+            0,  1,  0,  2,  0,  3,  0,  4,
+            1,  2,  2,  3,  3,  4,  4,  1,
+            5,  6,  6,  7,  7,  8,  8,  5,
+            9, 10, 10, 11, 11, 12, 12,  9,
+            5,  9,  6, 10,  7, 11,  8, 12
+        };
+
+        //eEditMesh em;
+        //eMesh m(gfx, eMesh::TYPE_DYNAMIC, em);
+        //eMeshInstance mi(&m);
+
+        eStateManager::push();
+
+        eGeometry geo(gfx, 13, 40, 20, eVTXTYPE_WIRE, eGeometry::TYPE_DYNAMIC_INDEXED, ePRIMTYPE_LINELIST);
+        eWireVertex *verts = eNULL;
+        eU32 *inds = eNULL;
+
+        eMatrix4x4 mtx;
+        mtx.transformation(rot, pos, scale);
+
+        geo.startFilling((ePtr *)&verts, &inds);
+        {
+            eMemCopy(inds, indices, sizeof(indices)); 
+
+            for (eU32 i=0; i<20; i++)
+            {
+                eVector3 p = arrowPos[i];
+                p.rotate(rot);
+                p.rotate(rot2);
+                p.scale(scale);
+                p.translate(pos);
+                verts[i].set(p, color);
+            }
+        }
+        geo.stopFilling();
+        geo.render();
+
+        eStateManager::pop();
+    }
+
+    void renderPlane(const eColor &color, eIGraphicsApi *gfx) const
+    {
+        eASSERT(gfx != eNULL);
+    }
+
+private:
+};

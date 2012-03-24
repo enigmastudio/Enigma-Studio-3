@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup
+    Condition="'$(Vertex_shader_compilerBeforeTargets)' == '' and '$(Vertex_shader_compilerAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <Vertex_shader_compilerBeforeTargets>Midl</Vertex_shader_compilerBeforeTargets>
+    <Vertex_shader_compilerAfterTargets>CustomBuild</Vertex_shader_compilerAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Vertex_shader_compilerDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(Vertex_shader_compilerDependsOn)</Vertex_shader_compilerDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Vertex_shader_compiler>
+      <CommandLineTemplate>fxc [debugging] [optimization] /Tvs_3_0 /Fh"%(RootDir)%(Directory)%(Filename).vs.hpp" /Vn vs_%(Filename) /Zpr /O3 "[inputs]"</CommandLineTemplate>
+      <Outputs>%(RootDir)%(Directory)%(Filename).vs.hpp</Outputs>
+      <ExecutionDescription>Compiling vertex shader</ExecutionDescription>
+    </Vertex_shader_compiler>
+  </ItemDefinitionGroup>
+  <PropertyGroup
+    Condition="'$(Pixel_shader_compilerBeforeTargets)' == '' and '$(Pixel_shader_compilerAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <Pixel_shader_compilerBeforeTargets>Midl</Pixel_shader_compilerBeforeTargets>
+    <Pixel_shader_compilerAfterTargets>CustomBuild</Pixel_shader_compilerAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Pixel_shader_compilerDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(Pixel_shader_compilerDependsOn)</Pixel_shader_compilerDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Pixel_shader_compiler>
+      <CommandLineTemplate>fxc [debugging] [optimization] /Tps_3_0 /Fh"%(RootDir)%(Directory)%(Filename).ps.hpp" /Vn ps_%(Filename) /Zpr /O3 "[inputs]"</CommandLineTemplate>
+      <Outputs>%(RootDir)%(Directory)%(Filename).ps.hpp</Outputs>
+      <ExecutionDescription>Compiling pixel shader</ExecutionDescription>
+    </Pixel_shader_compiler>
+  </ItemDefinitionGroup>
+</Project>

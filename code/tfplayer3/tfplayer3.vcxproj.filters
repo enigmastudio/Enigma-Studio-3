@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="eshared">
+      <UniqueIdentifier>{f6646bb3-b4b5-4776-8929-c5a7365d8ceb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{4faaf3bd-625f-456d-8087-5bdb65eca7a4}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="eshared\system">
+      <UniqueIdentifier>{c417636f-3f8c-4c23-a1c9-993457df647d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="eshared\synth">
+      <UniqueIdentifier>{e79dedb6-83af-4ba1-9e0e-99f2d307cdbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="eshared\synth\directx">
+      <UniqueIdentifier>{d016c0d6-60cd-4223-8eaf-057e172fdd2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\eshared\system\types.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\array.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\color.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\factory.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\hashmap.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\profiler.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\runtime.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\singleton.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\system.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\timer.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_addsynth.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_adsr.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_filter.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_ieffect.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_instrument.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_lfo.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_modmatrix.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_noise.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_oscillator.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_player.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_song.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tunefish3.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_effectstack.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\tf_isoundout.hpp">
+      <Filter>eshared\synth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\synth\directx\tf_soundoutdx8.hpp">
+      <Filter>eshared\synth\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\point.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\rect.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\eshared\system\threading.hpp">
+      <Filter>eshared\system</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\eshared\system\array.cpp">
+      <Filter>eshared\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\system\color.cpp">
+      <Filter>eshared\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\system\hashmap.cpp">
+      <Filter>eshared\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\system\profiler.cpp">
+      <Filter>eshared\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\system\runtime.cpp">
+      <Filter>eshared\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\system\timer.cpp">
+      <Filter>eshared\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_addsynth.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_adsr.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_filter.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_ieffect.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_instrument.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_lfo.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_modmatrix.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_noise.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_oscillator.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_player.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\tf_song.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="tfplayer3.cpp" />
+    <ClCompile Include="..\eshared\synth\tf_effectstack.cpp">
+      <Filter>eshared\synth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\synth\directx\tf_soundoutdx8.cpp">
+      <Filter>eshared\synth\directx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\eshared\system\threading.cpp">
+      <Filter>eshared\system</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

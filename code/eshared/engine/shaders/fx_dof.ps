@@ -1,0 +1,29 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *   This file is part of
+ *       _______   ______________  ______     _____
+ *      / ____/ | / /  _/ ____/  |/  /   |   |__  /
+ *     / __/ /  |/ // // / __/ /|_/ / /| |    /_ <
+ *    / /___/ /|  // // /_/ / /  / / ___ |  ___/ /
+ *   /_____/_/ |_/___/\____/_/  /_/_/  |_| /____/.
+ * 
+ *   Copyright © 2003-2010 Brain Control, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+sampler s_target:   register(s0);
+sampler s_blurMap:  register(s1);
+sampler s_posG:     register(s2);
+float4  c_focus:    register(c0); // focus depth, focus range
+
+float4 main(float2 uv: TEXCOORD0) : COLOR 
+{
+	const float4 col0 = tex2D(s_target, uv);
+	const float4 col1 = tex2D(s_blurMap, uv);
+	const float3 pos = tex2D(s_posG, uv).xyz;
+
+	const float depth = length(pos);
+	const float f = saturate(abs(depth-c_focus.x)/c_focus.y);
+
+    return lerp(col0, col1, f);
+}
