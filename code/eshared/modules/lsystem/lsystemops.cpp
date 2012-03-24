@@ -473,6 +473,7 @@ OP_DEFINE_MODEL(eModelPopulateSurfaceOp, eModelPopulateSurfaceOp_ID, "Populate S
 
             m_sceneData.clear();
             if(recalcLsys) {
+#if defined(HAVE_OP_MODEL_LSYSTEM) || defined(eEDITOR)
                 eLSystemOp2* lsysOp = (eLSystemOp2*)model;
                 eLSystem& lsys = lsysOp->m_lsys;
                 m_rentries.reserve(count);
@@ -523,6 +524,7 @@ OP_DEFINE_MODEL(eModelPopulateSurfaceOp, eModelPopulateSurfaceOp_ID, "Populate S
                 lsys.m_initialPosition = oldPos;
                 lsys.m_initialRotation = oldRot;
                 lsys.m_sizePar = oldSize;
+#endif
             } else {
                 // normal models
 			    eSceneData &sd = model->getResult().sceneData;
